@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+
+.fontAnta {
+    font-family: 'Anta', sans-serif;
+}
+
+.fontJosefine {
+    font-family: 'Josefine', sans-serif;
+}
+
+@font-face {
+  font-family: 'Anta';
+  src: url('/assets/fonts/Anta/Anta-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Josefine';
+  src: url('/assets/fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Josefine';
+  src: url('/assets/fonts/Josefin_Sans/static/JosefinSans-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
