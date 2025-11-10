@@ -1,0 +1,197 @@
+.skillsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 10%;
+    gap: 80px;
+    margin-top: 104px;
+    margin-bottom: 104px;
+
+    h2 {
+        font-size: 78px;
+        font-weight: 700;
+        color: #89BCD9;
+        margin: 0;
+    }
+}
+
+.skillsContent {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1440px;
+}
+
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px 64px;
+    align-items: start;
+}
+
+.skillItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    img {
+        width: 60px;
+        height: 60px;
+    }
+
+    span {
+        font-size: 16px;
+        color: #89BCD9;
+        font-weight: 400;
+        text-align: center;
+    }
+}
+
+.learningSection {
+    width: 480px;
+    height: 480px;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: center / contain no-repeat url('/assets/skills-section/Shape_currently_learning.svg');
+        transition: opacity 0.2s ease-in-out;
+        opacity: 1;
+        z-index: 0;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: center / contain no-repeat url('/assets/skills-section/Shape_currently_learning_hover.svg');
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+        z-index: 0;
+    }
+
+    &:hover::before {
+        opacity: 0;
+    }
+
+    &:hover::after {
+        opacity: 1;
+    }
+
+    > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    > p {
+        font-size: 18px;
+        color: #F8F5EC;
+        margin: 0;
+    }
+
+    .learningIcons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+    }
+
+    .learningIcon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        img {
+            width: 56px;
+            height: 56px;
+        }
+
+        span {
+            font-size: 15px;
+            color: #F8F5EC;
+            font-weight: 400;
+        }
+    }
+
+    .motivationalText {
+        font-size: 15px;
+        color: #F8F5EC;
+        font-weight: 400;
+        text-align: center;
+        margin: 0;
+        padding: 0 40px;
+        line-height: 1.6;
+        max-width: 360px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .skillsContent {
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+    }
+
+    .skillsGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px 50px;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .skillsContainer {
+        padding-inline: 5%;
+        gap: 40px;
+
+        h2 {
+            font-size: 48px;
+        }
+    }
+
+    .skillsGrid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    .learningSection {
+        width: 320px;
+        height: 320px;
+
+        h3 {
+            font-size: 20px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .skillsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .skillItem {
+        img {
+            width: 48px;
+            height: 48px;
+        }
+
+        span {
+            font-size: 14px;
+        }
+    }
+}

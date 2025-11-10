@@ -1,0 +1,23 @@
+<section class="skillsContainer">
+  <h2>My skills</h2>
+  
+  <div class="skillsContent">
+    <div class="skillsGrid">
+      <div class="skillItem" *ngFor="let skill of skills">
+        <img [src]="skill.icon" [alt]="skill.name" />
+        <span>{{ skill.name }}</span>
+      </div>
+    </div>
+
+    <div class="learningSection">
+      <p>I am currently learning</p>
+      <div class="learningIcons">
+        <div class="learningIcon" *ngFor="let skill of learningSkills">
+          <img [src]="skill.icon" [alt]="skill.name" />
+          <span>{{ skill.name }}</span>
+        </div>
+      </div>
+      <p class="motivationalText">Show that you are motivated to continually improve your skills, implement innovative solutions and stay abreast of new technologies.</p>
+    </div>
+  </div>
+</section>
