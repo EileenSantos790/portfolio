@@ -1,4 +1,47 @@
-/* You can add global styles to this file, and also import other style files */
+$bg_projects: #262E34;
+$primary_color: #89BCD9;
+$secondary_color: #F8F5EC;
+$inactive_color: #262E341F;
+$error_color: #E44C36;
+$done_color: #97E163;
+
+* {
+  margin: 0;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+  font-family: "Josefine", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+    background-color: $bg_projects;
+}
+
+h1 {
+    font-size: 88px;
+    color: $secondary_color;
+    font-family: 'Anta';
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+h2 {
+    color: $primary_color;
+    font-family: 'Anta';
+    font-size: 60px;
+}
+
+h3 {
+    color: $secondary_color;
+    font-size: 40px;
+    font-weight: 400;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
 
 .fontAnta {
     font-family: 'Anta', sans-serif;
