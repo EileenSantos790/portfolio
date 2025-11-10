@@ -1,3 +1,6 @@
+$secondary_color: #F8F5EC;
+
+
 /* Main Container */
 .sectionContainer {
   height: calc(100vh - 104px);
@@ -88,6 +91,12 @@
     display: block;
   }
 
+  .nameLogo{
+    font-family: 'Anta', sans-serif;
+    font-size: 16px;
+    color: $secondary_color;
+  }
+
   &:hover .logoHeroImg {
     background-image: url('/assets/hero-section/icons/logo_hover.svg');
   }
@@ -110,7 +119,7 @@
 }
 
 .goDownHero {
-  padding-top: 10%;
+  margin-top: 140px;
   height: 89px;
   display: flex;
   justify-content: center;
