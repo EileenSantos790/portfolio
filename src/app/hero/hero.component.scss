@@ -10,13 +10,19 @@ $secondary_color: #F8F5EC;
   flex-direction: column;
 }
 
+.menuIcon{
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
 .FirstHeroSectionContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   margin-inline: 20px;
-  width: 100%;
+  width: 80%;
 }
 
 /* Hero Image Section */
@@ -42,7 +48,7 @@ $secondary_color: #F8F5EC;
   transform: rotate(-45deg);
   top: 0;
   left: 5%;
-  width: 85%;
+  width: 80%;
   height: 110%;
   opacity: 1;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -257,6 +263,12 @@ $secondary_color: #F8F5EC;
   }
 }
 
+@media (min-width: 1180px) {
+  .responsiveHeader {
+    display: none;
+  }
+}
+
 @media (max-width: 1180px) {
   .heroSectionTitle {
     font-size: 48px;
@@ -266,10 +278,6 @@ $secondary_color: #F8F5EC;
     font-size: 24px;
   }
 
-  .navLinks a {
-    font-size: 20px;
-  }
-
   .languageSwitch a {
     font-size: 20px;
   }
@@ -277,15 +285,25 @@ $secondary_color: #F8F5EC;
   .heroSectionTextContainer {
     display: none;
   }
-
-  .navLinks {
-    gap: 40px;
-    font-size: 16px;
-  }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 740px) {
   .FirstHeroSectionContainer {
     flex-direction: column;
+  }
+
+  .responsiveHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+  }
+
+  .sectionContainer {
+    height: 100vh;
+  }
+
+  .mainImg {
+    margin-top: 60px;
   }
 }

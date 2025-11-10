@@ -92,3 +92,26 @@
     flex-direction: column;
     width: 56px;
 }
+
+@media (max-width: 1180px) {
+
+  .navLinks a {
+    font-size: 20px;
+  }
+
+  .languageSwitch a {
+    font-size: 20px;
+  }
+
+  .navLinks {
+    gap: 40px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 740px) {
+
+  .navLine{
+    display: none;
+  }
+}
