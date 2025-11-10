@@ -263,12 +263,6 @@ $secondary_color: #F8F5EC;
   }
 }
 
-@media (min-width: 1180px) {
-  .responsiveHeader {
-    display: none;
-  }
-}
-
 @media (max-width: 1180px) {
   .heroSectionTitle {
     font-size: 48px;
@@ -305,5 +299,16 @@ $secondary_color: #F8F5EC;
 
   .mainImg {
     margin-top: 60px;
+  }
+
+  .goDownHero{
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 740px) {
+  .responsiveHeader {
+    display: none;
   }
 }
