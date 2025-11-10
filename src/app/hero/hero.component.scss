@@ -15,31 +15,36 @@
 }
 
 /* Hero Image Section */
-
 .heroSectionImgContainer {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.heroCircleBackground:hover {
-  opacity: 0.9;
-  transform: rotate(27deg);
+  &:hover .heroCircleBackground {
+    transform: rotate(-27deg);
+    opacity: 0.9;
+  }
 }
-
 
 .heroCircleBackground {
   position: absolute;
   background-image: url('../../assets/hero-section/icons/blue_circle1.svg');
   background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
   transform: rotate(-45deg);
   top: 0;
   left: 5%;
-  width: 90%;
+  width: 85%;
   height: 110%;
   opacity: 1;
-  transition: transform 0.3s ease;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.heroCircleBackground:hover {
+  opacity: 0.9;
+  transform: rotate(-27deg);
 }
 
 .mainImg {
@@ -50,7 +55,6 @@
 }
 
 /* Hero Text Section */
-
 .heroSectionTextContainer {
   display: flex;
   flex-direction: row;
@@ -60,7 +64,6 @@
 }
 
 /* Hero Logo */
-
 .socialMediaIconsHero {
   display: flex;
   flex-direction: column;
@@ -73,23 +76,24 @@
   justify-content: center;
   flex-direction: column;
   width: 56px;
-  ;
-}
 
-.nameLogo {
-  color: #F8F5EC;
-  font-family: 'Anta', sans-serif;
-  font-size: 16px;
-}
+  .logoHeroImg {
+    width: 56px;
+    height: 56px;
+    background-image: url('/assets/hero-section/icons/Logo.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 300ms ease-out;
+    display: block;
+  }
 
-.specificationLogo {
-  color: #89BCD9;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 16px;
+  &:hover .logoHeroImg {
+    background-image: url('/assets/hero-section/icons/logo_hover.svg');
+  }
 }
 
 /* Hero HEADLINE */
-
 .heroHeadline {
   display: flex;
   flex-direction: column;
@@ -112,28 +116,31 @@
   justify-content: center;
   align-items: center;
 
-  >svg {
-    animation: bounce 1s infinite alternate;
+  >a {
+    >svg {
+      animation: bounce 1s infinite alternate;
 
-    rect {
-      transition: fill 0.4s ease;
-      fill: transparent;
-    }
-
-    &:hover {
       rect {
-        fill: rgba(255, 255, 255, 0.1);
+        transition: fill 0.4s ease;
+        fill: transparent;
       }
 
-      path {
-        fill: #6dbfb8;
-      }
+      &:hover {
+        rect {
+          fill: #F8F5EC1F;
+        }
 
-      animation-play-state: paused;
+        path {
+          fill: #89BCD9;
+        }
+
+        animation-play-state: paused;
+      }
     }
   }
 
 }
+
 
 .navLine {
   width: 2px;
@@ -156,6 +163,12 @@
 .nameLogoSmall {
   color: #F8F5EC;
   font-family: 'Anta', sans-serif;
+  font-size: 16px;
+}
+
+.specificationLogo {
+  color: #89BCD9;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 16px;
 }
 
@@ -210,7 +223,26 @@
   color: #F1F0EA;
 }
 
+.emailHover:hover svg {
+  circle {
+    fill: #89BCD9;
+  }
 
+  path,
+  rect {
+    stroke: #262E34;
+  }
+}
+
+.gitHubHover:hover svg {
+  circle {
+    fill: #89BCD9;
+  }
+
+  path {
+    fill: #262E34 !important;
+  }
+}
 
 @media (max-width: 1180px) {
   .heroSectionTitle {
