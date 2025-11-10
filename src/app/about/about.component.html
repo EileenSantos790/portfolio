@@ -2,8 +2,10 @@
     <h2>Why me</h2>
     <div class="aboutTextContent">
         <div class="textAnimationContainer">
-            <img src="../../assets/Why_me_Section/Location.svg" alt="About Me" />
-            <span class="spaceAnimation">I am located in Hannover</span>
+            <img [src]="currentIcon" [class]="fadeClass" alt="About Me" />
+            <span class="spaceAnimation">
+                <span class="highlight">I am&nbsp;</span><span #typedElement></span>
+            </span>
         </div>
         <div class="textArea">
             <span>I’m passionate about coding because it allows me to turn ideas into real, working solutions. I enjoy
