@@ -153,9 +153,9 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .skillsContainer {
-        padding-inline: 5%;
+        padding-inline: 10%;
         gap: 40px;
 
         h2 {
@@ -164,8 +164,8 @@
     }
 
     .skillsGrid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 40px;
     }
 
     .learningSection {
@@ -176,22 +176,34 @@
             font-size: 20px;
         }
     }
+
+    .skillItem {
+        img {
+            width: 42px;
+            height: 45px;
+        }
+
+        span {
+            display: none;
+        }
+    }
+
+    .skillsContainer{
+        margin-block: 80px;
+    }
 }
 
 @media (max-width: 480px) {
     .skillsGrid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+        max-width: 100%;
     }
-
+    
     .skillItem {
-        img {
-            width: 48px;
-            height: 48px;
-        }
-
-        span {
-            font-size: 14px;
-        }
+        flex: 0 0 calc(25% - 30px);
+        min-width: 60px;
     }
 }
