@@ -1,0 +1,151 @@
+<section>
+  <div class="contact-main">
+    <div class="headline">
+      <h2>Contact me</h2>
+      <a class="arrow-up" (mouseover)="arrowIsHovered = true" (mouseout)="arrowIsHovered = false" href="#">
+        <img 
+          [src]="arrowIsHovered ? '/assets/Why_me_Section/Arrow_up_hover.svg' : '/assets/Why_me_Section/Arrow_up.svg'" 
+          alt="Arrow up">
+      </a>
+    </div>
+
+    <div class="description">
+      <div class="contact-me-text">
+        <p>
+          Encourage people to contact you and describe what role you are interested in. 
+          Show that you will add value to their projects through your work.
+          Example: Feel free to get in touch with job offers or opportunities such as: ...
+        </p>
+      </div>
+      <div class="contact-data">
+        <div class="email" (mouseover)="mailIsHovered = true" (mouseout)="mailIsHovered = false">
+          <a href="mailto:eileen.santo@outlook.de">
+            <img 
+              [src]="mailIsHovered ? '/assets/contact-section/Mail_hover.svg' : '/assets/contact-section/Mail.svg'" 
+              alt="Mail">
+            <span>E-mail: eileen.santo&#64;outlook.de</span>
+          </a>
+        </div>
+        <div (mouseover)="phoneIsHovered = true" (mouseout)="phoneIsHovered = false" class="phone">
+          <img 
+            [src]="phoneIsHovered ? '/assets/contact-section/phone_hover.svg' : '/assets/contact-section/phone.svg'" 
+            alt="Phone">
+          <span>Tel: 0157 123 456 68</span>
+        </div>
+      </div>
+    </div>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="input-data">
+        <div class="form-field">
+          <label for="name">
+            <ng-container *ngIf="(contactForm.get('name')?.errors?.['required'] && (contactForm.get('name')?.touched || submitted))">
+              <div class="input-error">Your Name is required.</div>
+            </ng-container>
+            <ng-container *ngIf="!contactForm.get('name')?.errors || (!contactForm.get('name')?.touched && !submitted)">
+              Your name
+            </ng-container>
+          </label>
+          <input
+            type="text"
+            id="name"
+            formControlName="name"
+            [attr.placeholder]="getDynamicPlaceholder('name')"
+            [ngClass]="{
+              'responsive-placeholder': true,
+              'placeholder-error': contactForm.get('name')?.invalid && (contactForm.get('name')?.touched || submitted),
+              'border-error': contactForm.get('name')?.invalid && (contactForm.get('name')?.touched || submitted)
+            }"
+          />
+        </div>
+
+        <div class="form-field">
+          <label for="email">
+            <ng-container class="input-error" *ngIf="(contactForm.get('email')?.errors?.['required'] && (contactForm.get('email')?.touched || submitted))">
+              <div class="input-error">Email is required.</div>
+            </ng-container>
+            <ng-container class="input-error" *ngIf="(contactForm.get('email')?.errors?.['email'] && !contactForm.get('email')?.errors?.['required'] && (contactForm.get('email')?.touched || submitted))">
+              <div class="input-error">Invalid email format.</div>
+            </ng-container>
+            <ng-container *ngIf="!contactForm.get('email')?.errors || (!contactForm.get('email')?.touched && !submitted)">
+              Your Email
+            </ng-container>
+          </label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            [attr.placeholder]="getDynamicPlaceholder('email')"
+            [ngClass]="{
+              'responsive-placeholder': true,
+              'placeholder-error': contactForm.get('email')?.invalid && (contactForm.get('email')?.touched || submitted),
+              'border-error': contactForm.get('email')?.invalid && (contactForm.get('email')?.touched || submitted)
+            }"
+          />
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for="message">
+          <ng-container *ngIf="(contactForm.get('message')?.invalid && (contactForm.get('message')?.touched || submitted))">
+            <div class="input-error">Message is required.</div>
+          </ng-container>
+          <ng-container *ngIf="!contactForm.get('message')?.invalid || (!contactForm.get('message')?.touched && !submitted)">
+            Your Message
+          </ng-container>
+        </label>
+        <textarea 
+          id="message"
+          type="text"
+          formControlName="message"
+          [attr.placeholder]="getDynamicPlaceholder('message')"
+          rows="5"
+          [ngClass]="{
+            'responsive-placeholder': true,
+            'placeholder-error': contactForm.get('message')?.invalid && (contactForm.get('message')?.touched || submitted),
+            'border-error': contactForm.get('message')?.invalid && (contactForm.get('message')?.touched || submitted)
+          }"
+        ></textarea>
+      </div>
+
+      <div class="form-field checkbox">
+        <input 
+          type="checkbox" 
+          id="customCheckbox" 
+          formControlName="privacyPolicy" 
+          hidden
+        />
+
+        <label
+          for="customCheckbox"
+          class="custom-checkbox"
+        >
+          <img 
+            (mouseenter)="isCheckboxHovered = true"
+            (mouseleave)="isCheckboxHovered = false"
+            [src]="getCheckboxImage()" 
+            alt="Checkbox state" 
+          />
+          <p>I've read the <a href="#"> privacy policy </a> and agree to the processing of my data as outlined.</p>
+        </label>
+
+        <div class="error" *ngIf="hasPrivacyError()">
+          Please accept the privacy policy.
+        </div>
+      </div>
+
+      <div class="button-wrapper">
+        <button [ngClass]="{ 'disabled': contactForm.invalid }" type="submit">
+          Send
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="toast" *ngIf="showToast">
+    <div class="toast-content">
+      <img src="/assets/contact-section/Check_Box_3.svg" alt="Success icon">
+      <p>Your message has been sent successfully.</p>
+    </div>
+  </div>
+</section>
