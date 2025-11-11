@@ -1,0 +1,76 @@
+<section>
+  <h2>My Projects</h2>
+  <div class="project-main-card">
+    <nav>
+      @for (project of projects; track $index) {
+        <button 
+          [class.active]="activeIndex === $index" 
+          (click)="setActive($index)" 
+          class="button">
+          {{ $index + 1 }}. {{ project.name }}
+        </button>
+      }
+    </nav>
+
+    <div class="content-wrapper">
+      <div class="content-inner">
+        <div class="left-section">
+          <div class="task">
+            <div class="task-header">
+              <div class="bullet-point">
+                <img src="/assets/projects-section/eclipse.svg" alt="bullet point">
+              </div>
+              <div class="task-title">
+                <h3>About the project</h3>
+                <span>Duration: {{ projects[activeIndex].duration }}</span>
+              </div>
+            </div>
+            <p>{{ projects[activeIndex].about }}</p>
+          </div>
+
+          <div class="task">
+            <div class="task-header">
+              <div class="bullet-point">
+                <img src="/assets/projects-section/eclipse.svg" alt="bullet point">
+              </div>
+              <div class="task-title">
+                <h3>How I have organised my work process</h3>
+              </div>
+            </div>
+            <p>{{ projects[activeIndex].process }}</p>
+          </div>
+
+          <div class="task">
+            <div class="task-header">
+              <div class="bullet-point">
+                <img src="/assets/projects-section/eclipse.svg" alt="bullet point">
+              </div>
+              <div class="task-title">
+                <h3>My group work experience</h3>
+              </div>
+            </div>
+            <p>{{ projects[activeIndex].experience }}</p>
+          </div>
+        </div>
+
+        <div class="right-section">
+          <div class="tools">
+            <p>Technologies</p>
+            <div class="icons-tools">
+              @for (tech of projects[activeIndex].technologies; track $index) {
+                <img src="/assets/skills-section/{{ tech }}.svg" alt="{{ tech }}">
+              }
+            </div>
+          </div>
+          <div class="project-image">
+            <img [src]="projects[activeIndex].image" alt="Project Screenshot" />
+          </div>
+          <div class="links">
+            <a [href]="projects[activeIndex].live" target="_blank" rel="noopener">Live Test</a>
+            <a [href]="projects[activeIndex].github" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
