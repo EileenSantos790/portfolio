@@ -1,6 +1,6 @@
 <section id="skills" class="skillsContainer">
   <h2>My skills</h2>
-  
+
   <div class="skillsContent">
     <div class="skillsGrid">
       <div class="skillItem" *ngFor="let skill of skills">
@@ -17,7 +17,24 @@
           <span>{{ skill.name }}</span>
         </div>
       </div>
-      <p class="motivationalText">Show that you are motivated to continually improve your skills, implement innovative solutions and stay abreast of new technologies.</p>
+      <p class="motivationalText">Show that you are motivated to continually improve your skills, implement innovative
+        solutions and stay abreast of new technologies.</p>
+    </div>
+
+    <div class="responsiveLearningSection">
+      <p class="responsiveLearningSectionHeadline">I am currently learning</p>
+    </div>
+    <div class="responsiveLearningContainer">
+      <div class="responsiveIconContainer">
+        <div class="responsiveLearningIcon" *ngFor="let skill of learningSkills">
+          <img [src]="skill.icon" [alt]="skill.name" />
+          <span>{{ skill.name }}</span>
+        </div>
+      </div>
+      <p class="responsiveMotivationalText">Show that you are motivated to continually improve your skills, implement
+        innovative
+        solutions and stay abreast of new technologies.
+      </p>
     </div>
   </div>
 </section>
