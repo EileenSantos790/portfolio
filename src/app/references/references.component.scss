@@ -1,0 +1,186 @@
+$mainBgColor: #262E34;
+$fontLightPurple: #F8F5EC;
+$lightBlue: #89BCD9;
+$BtnHoverBg: #F8F5EC1F;
+$projectBg: #89BCD912;
+
+h2,
+h3 {
+  color: $lightBlue;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 24px;
+  margin-bottom: 89px;
+
+  @media screen and (max-width: 350px) {
+    margin: 0 12px;
+  }
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 56px;
+
+  @media (max-width: 950px) {
+    font-size: 24px;
+    padding: 0 20px;
+  }
+}
+
+.references {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  max-width: 1440px;
+  overflow-x: auto;
+  padding-bottom: 24px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    height: 10px;
+    background: #1a1f23;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $lightBlue;
+    border-radius: 8px;
+    border: 2px solid #1a1f23;
+    transition: background-color 0.3s;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: darken($lightBlue, 10%);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $projectBg;
+    border-radius: 8px;
+  }
+
+  scrollbar-color: $lightBlue $projectBg;
+  scrollbar-width: thin;
+}
+
+.reference {
+  min-width: 290px;
+  max-width: 450px;
+  width: 100%;
+  height: 400px;
+  padding: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  background-image: url("/assets/references-section/eclipse_reference.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 500ms ease;
+
+  &:hover {
+    background-image: url("/assets/references-section/eclipse_reference_hover.svg");
+  }
+
+  @media (max-width: 1300px) {
+    height: 350px;
+  }
+
+  @media (max-width: 1100px) {
+    height: 290px;
+  }
+
+  .reference_text {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      font-size: 28px;
+      font-weight: 500;
+      margin: 0;
+
+      @media (max-width: 1300px) {
+        font-size: 24px;
+      }
+
+      @media (max-width: 1100px) {
+        color: $fontLightPurple;
+      }
+    }
+
+    .reference_project,
+    .reference_project > span {
+      font-size: 18px;
+      text-decoration: none;
+      font-family: "Josefin Sans", sans-serif;
+      text-align: center;
+      color: $fontLightPurple;
+
+      @media (max-width: 1100px) {
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+
+    span {
+      color: $lightBlue;
+    }
+
+    .text {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 16px;
+      color: $fontLightPurple;
+      text-align: center;
+      line-height: 1.6;
+      margin: 8px 0;
+
+      @media (max-width: 1100px) {
+        overflow-y: auto;
+        padding-right: 12px;
+
+        &::-webkit-scrollbar {
+          width: 6px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: $lightBlue;
+          border-radius: 4px;
+        }
+      }
+    }
+
+    a {
+      font-family: "Josefin Sans", sans-serif;
+      font-size: 16px;
+      color: $lightBlue;
+      margin-top: 8px;
+      transition: color 0.2s ease-in-out;
+      text-decoration: underline;
+
+      &:hover {
+        color: $fontLightPurple;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      height: 100%;
+      gap: 8px;
+    }
+  }
+}
