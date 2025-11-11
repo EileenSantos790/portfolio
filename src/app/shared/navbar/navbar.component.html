@@ -6,20 +6,20 @@
   </div>
   <div class="navLinks">
     <a href="#about" (click)="setActiveSection('about', $event)" [class.active]="activeSection === 'about'">
-      Why me
-      <img *ngIf="activeSection === 'about'" src="/assets/icons/selected-link.svg" alt="" class="active-indicator">
+      <span class="link-text">Why me</span>
+      <img *ngIf="activeSection === 'about'" src="/assets/icons/selected-link.svg" alt="" class="active-indicator" />
     </a>
     <a href="#skills" (click)="setActiveSection('skills', $event)" [class.active]="activeSection === 'skills'">
-      Skills
-      <img *ngIf="activeSection === 'skills'" src="/assets/icons/selected-link.svg" alt="" class="active-indicator">
+      <span class="link-text">Skills</span>
+      <img *ngIf="activeSection === 'skills'" src="/assets/icons/selected-link.svg" alt="" class="active-indicator" />
     </a>
     <a href="#projects" (click)="setActiveSection('projects', $event)" [class.active]="activeSection === 'projects'">
-      Projects
-      <img *ngIf="activeSection === 'projects'" src="/assets/icons/selected-link.svg" alt="" class="active-indicator">
+      <span class="link-text">Projects</span>
+      <img *ngIf="activeSection === 'projects'" src="/assets/icons/selected-link.svg" alt="" class="active-indicator" />
     </a>
     <a href="#contact" (click)="setActiveSection('contact', $event)" [class.active]="activeSection === 'contact'">
-      Contact
-      <img *ngIf="activeSection === 'contact'" src="/assets/icons/selected-link.svg" alt="" class="active-indicator">
+      <span class="link-text">Contact</span>
+      <img *ngIf="activeSection === 'contact'" src="/assets/icons/selected-link.svg" alt="" class="active-indicator" />
     </a>
   </div>
   <div class="languageSwitch">
