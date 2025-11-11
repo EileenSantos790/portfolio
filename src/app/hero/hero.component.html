@@ -7,11 +7,28 @@
         <span class="specificationLogo">developer</span>
       </div>
     </div>
-    <img class="menuIcon" src="../../assets/hero-section/icons/symple_menu.svg" alt="Menu Icon">
+    <div class="menuTrigger">
+      <img class="menuIcon" src="../../assets/hero-section/icons/symple_menu.svg" alt="Menu Icon" (click)="toggleMenu()" aria-haspopup="true" [attr.aria-expanded]="isMenuOpen">
+    </div>
   </div>
+  <!-- Backdrop to close on outside click -->
+  <div class="overlayBackdrop" *ngIf="isMenuOpen" (click)="closeMenu()"></div>
   <div class="FirstHeroSectionContainer">
     <div class="heroSectionImgContainer">
       <div class="heroCircleBackground"></div>
+      <!-- Overlay centered over main image -->
+      <nav class="overlayCard" *ngIf="isMenuOpen" (click)="$event.stopPropagation()">
+        <ul class="overlayList">
+          <li><a href="#about" (click)="closeMenu()">Why me</a></li>
+          <li><a href="#skills" (click)="closeMenu()">Skills</a></li>
+          <li><a href="#projects" (click)="closeMenu()">Projects</a></li>
+          <li><a href="#contact" (click)="closeMenu()">Contact</a></li>
+        </ul>
+        <div class="overlayLang">
+          <span class="lang">DE</span>
+          <span class="lang active">EN</span>
+        </div>
+      </nav>
       <img class="mainImg" src="./assets/hero-section/hero_Container_img.png" />
     </div>
     <div>
