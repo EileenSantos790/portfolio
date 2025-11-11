@@ -159,7 +159,7 @@
         gap: 40px;
 
         h2 {
-            font-size: 48px;
+            font-size: 32px;
         }
     }
 
@@ -193,12 +193,16 @@
     }
 }
 
-@media (min-width: 480px){
+@media (min-width: 480px) {
     .responsiveLearningSection {
         display: none;
     }
 
-    .responsiveLearningContainer{
+    .responsiveLearningContainer {
+        display: none;
+    }
+
+    .buttonSecondary {
         display: none;
     }
 }
@@ -259,7 +263,7 @@
         background-size: 113px 96px;
         min-width: 113px;
         min-height: 96px;
-    
+
     }
 
     .responsiveLearningIcon {
@@ -267,7 +271,7 @@
         flex-direction: column;
         align-items: center;
         gap: 5px;
-       
+
         img {
             width: 32px;
             height: 32px;
@@ -285,5 +289,20 @@
         line-height: 1.5;
         color: #F8F5EC;
         margin: 0;
+    }
+
+    .buttonSecondary {
+        background-color: #89BCD9;
+        border: none;
+        border-radius: 30px;
+        padding-inline: 30px;
+        padding-block: 13px;
+        margin-top: 40px;
+        justify-content: center;
+        align-items: center;
+        color: #262E34;
+        font-size: 16px;
+        font-weight: 400px;
+        cursor: pointer;
     }
 }
