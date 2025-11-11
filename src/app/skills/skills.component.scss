@@ -3,14 +3,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-inline: 10%;
+    padding-inline: 30%;
     gap: 80px;
     margin-top: 104px;
     margin-bottom: 104px;
 
     h2 {
-        font-size: 78px;
-        font-weight: 700;
+        font-size: 60px;
+        font-weight: 400;
         color: #89BCD9;
         margin: 0;
     }
@@ -18,7 +18,7 @@
 
 .skillsContent {
     display: flex;
-    gap: 100px;
+    gap: 79px;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -28,7 +28,7 @@
 .skillsGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 48px 64px;
+    gap: 40px 40px;
     align-items: start;
 }
 
@@ -39,12 +39,12 @@
     gap: 10px;
 
     img {
-        width: 60px;
+        width: 54px;
         height: 60px;
     }
 
     span {
-        font-size: 16px;
+        font-size: 18px;
         color: #89BCD9;
         font-weight: 400;
         text-align: center;
@@ -52,21 +52,21 @@
 }
 
 .learningSection {
-    width: 480px;
-    height: 480px;
+    width: 375px;
+    height: 391px;
     flex-shrink: 0;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 19px;
 
     &::before {
         content: '';
         position: absolute;
         inset: 0;
-        background: center / contain no-repeat url('/assets/skills-section/Shape_currently_learning.svg');
+    background: center / contain no-repeat url("data:image/svg+xml,%3Csvg width='375' height='391' viewBox='0 0 380 380' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M378.236 166.829C393.295 259.064 310.398 367.971 188.523 379.991C77.3927 381.057 0 285.53 0 176.159C0 66.7874 92.4734 -1.32562e-09 158.281 0C264.39 0 361.076 61.7294 378.236 166.829Z' fill='%2389BCD9' fill-opacity='0.07'/%3E%3C/svg%3E");
         transition: opacity 0.2s ease-in-out;
         opacity: 1;
         z-index: 0;
@@ -76,7 +76,7 @@
         content: '';
         position: absolute;
         inset: 0;
-        background: center / contain no-repeat url('/assets/skills-section/Shape_currently_learning_hover.svg');
+    background: center / contain no-repeat url("data:image/svg+xml,%3Csvg width='375' height='391' viewBox='0 0 465 466' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M346.89 384.132C274.541 443.292 138.777 425.955 67.4293 326.417C10.9413 230.709 54.9736 115.921 149.692 61.2357C244.41 6.54997 348.487 53.2406 381.391 110.232C434.445 202.125 429.329 316.722 346.89 384.132Z' fill='%2389BCD9' fill-opacity='0.2'/%3E%3C/svg%3E");
         opacity: 0;
         transition: opacity 0.2s ease-in-out;
         z-index: 0;
@@ -113,22 +113,22 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
 
         img {
-            width: 56px;
-            height: 56px;
+            width: 32px;
+            height: 32px;
         }
 
         span {
-            font-size: 15px;
+            font-size: 16px;
             color: #F8F5EC;
             font-weight: 400;
         }
     }
 
     .motivationalText {
-        font-size: 15px;
+        font-size: 18px;
         color: #F8F5EC;
         font-weight: 400;
         text-align: center;
