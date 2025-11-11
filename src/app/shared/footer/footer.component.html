@@ -1,1 +1,41 @@
-<p>footer works!</p>
+<section class="footer-section">
+  <footer>
+    <div class="footer-content">
+      <div class="left-section-wrapper">
+        <a href="#">Legal notice</a>
+        <p>© Eileen Santos 2025</p>
+      </div>
+
+      <a href="#" class="logo">
+        <img src="/assets/hero-section/icons/Logo_black.svg" alt="Logo">
+        <span class="nameLogoSmall">E.Santos</span>
+        <span class="specificationLogoSmall">Developer</span>
+      </a>
+
+      <div class="link-wrapper">
+        <a href="https://github.com/EileenSantos790" target="_blank" rel="noopener"
+          (mouseenter)="githubHovered = true" (mouseleave)="githubHovered = false">
+          <img [src]="githubHovered ? '/assets/footer-section/github-hover.svg' : '/assets/footer-section/github.svg'" alt="GitHub">
+        </a>
+        <a href="mailto:eileen.santo@outlook.de" target="_blank" rel="noopener"
+          (mouseenter)="mailHovered = true" (mouseleave)="mailHovered = false">
+          <img [src]="mailHovered ? '/assets/footer-section/email-hover.svg' : '/assets/footer-section/email.svg'" alt="Mail">
+        </a>
+      </div>
+
+      <div class="link-wrapper-mobile">
+        <a href="https://github.com/EileenSantos790" target="_blank" rel="noopener">
+          <img src="/assets/footer-section/github.svg" alt="GitHub">
+        </a>
+        <a href="mailto:eileen.santo@outlook.de" target="_blank" rel="noopener">
+          <img src="/assets/footer-section/email.svg" alt="Mail mobile">
+        </a>
+      </div>
+
+      <div class="legal-notice-mobile">
+        <a href="#">Legal notice</a>
+        <p>© Eileen Santos 2025</p>
+      </div>
+    </div>
+  </footer>
+</section>

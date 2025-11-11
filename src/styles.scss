@@ -13,6 +13,10 @@ $done_color: #97E163;
   box-sizing: border-box;
 }
 
+html {
+  scroll-padding-top: 120px;
+}
+
 body {
     background-color: $bg_projects;
 }

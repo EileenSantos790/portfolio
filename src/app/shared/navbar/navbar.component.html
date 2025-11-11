@@ -5,13 +5,31 @@
     <span class="specificationLogoSmall">developer</span>
   </div>
   <div class="navLinks">
-    <a href="#about">Why me</a>
-    <a href="#">Skills</a>
-    <a href="#">Projects</a>
-    <a href="#">Contact</a>
+    <a href="#about" (click)="setActiveSection('about', $event)" [class.active]="activeSection === 'about'">
+      Why me
+      <img *ngIf="activeSection === 'about'" src="/assets/icons/selected-link.svg" alt="" class="active-indicator">
+    </a>
+    <a href="#skills" (click)="setActiveSection('skills', $event)" [class.active]="activeSection === 'skills'">
+      Skills
+      <img *ngIf="activeSection === 'skills'" src="/assets/icons/selected-link.svg" alt="" class="active-indicator">
+    </a>
+    <a href="#projects" (click)="setActiveSection('projects', $event)" [class.active]="activeSection === 'projects'">
+      Projects
+      <img *ngIf="activeSection === 'projects'" src="/assets/icons/selected-link.svg" alt="" class="active-indicator">
+    </a>
+    <a href="#contact" (click)="setActiveSection('contact', $event)" [class.active]="activeSection === 'contact'">
+      Contact
+      <img *ngIf="activeSection === 'contact'" src="/assets/icons/selected-link.svg" alt="" class="active-indicator">
+    </a>
   </div>
   <div class="languageSwitch">
-    <a href="#">DE</a>
-    <a href="#">EN</a>
+    <a href="#" (click)="setActiveLanguage('DE', $event)" [class.active]="activeLanguage === 'DE'">
+      DE
+      <img *ngIf="activeLanguage === 'DE'" src="/assets/icons/selected-language.svg" alt="" class="language-indicator">
+    </a>
+    <a href="#" (click)="setActiveLanguage('EN', $event)" [class.active]="activeLanguage === 'EN'">
+      EN
+      <img *ngIf="activeLanguage === 'EN'" src="/assets/icons/selected-language.svg" alt="" class="language-indicator">
+    </a>
   </div>
 </nav>

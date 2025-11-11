@@ -1,0 +1,138 @@
+$mainBgColor: #262E34;
+$fontLightPurple: #F8F5EC;
+$lightBlue: #89BCD9;
+$BtnHoverBg: #F8F5EC1F;
+$projectBg: #89BCD912;
+$error: #E44C36;
+
+.footer-section {
+  background-color: $lightBlue;
+  width: 100%;
+}
+
+footer {
+  font-family: 'Josefin Sans';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 0;
+  height: 214px;
+  font-size: 18px;
+
+  a {
+    text-decoration: none;
+    color: $mainBgColor;
+    transition: 0.2s all ease-in-out;
+
+    &:hover {
+      color: $fontLightPurple;
+    }
+  }
+
+  p {
+    color: $mainBgColor;
+    font-size: 18px;
+  }
+}
+
+.left-section-wrapper {
+  opacity: 1;
+  transition: opacity 0.1s cubic-bezier(0.0, 0.4, 0.165, 1), transform 0.2s ease;
+}
+
+.legal-notice-mobile {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 22px;
+}
+
+.link-wrapper {
+  img {
+    margin: 0 8px;
+  }
+}
+
+.link-wrapper-mobile {
+  display: none;
+}
+
+.logo {
+  margin-bottom: 32px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+
+  img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .nameLogoSmall,
+  .specificationLogoSmall {
+    font-family: 'Anta';
+    font-size: 18px;
+    color: $mainBgColor;
+    font-weight: 400;
+  }
+
+  .nameLogoSmall {
+    font-weight: 700;
+  }
+
+  &:hover {
+    .nameLogoSmall,
+    .specificationLogoSmall {
+      color: $fontLightPurple;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .legal-notice-mobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .left-section-wrapper {
+    display: none;
+  }
+
+  .link-wrapper {
+    display: none;
+  }
+
+  .link-wrapper-mobile {
+    display: flex;
+
+    img {
+      margin: 0 24px;
+    }
+  }
+
+  .legal-notice-mobile {
+    a,
+    p {
+      font-size: 14px;
+      padding: 32px 8px;
+    }
+  }
+}

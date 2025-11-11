@@ -55,12 +55,30 @@
     font-family: 'Josefin Sans', sans-serif;
     font-size: 26px;
     font-weight: 500;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
 }
 
 .navLinks a:hover {
     cursor: pointer;
     text-decoration: none;
     color: #F1F0EA;
+}
+
+.navLinks a.active {
+    color: #F1F0EA;
+}
+
+.active-indicator {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .languageSwitch {
@@ -75,8 +93,32 @@
     color: #262E34;
     text-decoration: none;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 26px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 400;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.languageSwitch a:hover {
+    cursor: pointer;
+    color: #F1F0EA;
+}
+
+.languageSwitch a.active {
+    color: #F1F0EA;
+}
+
+.language-indicator {
+    width: 36.8px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(2.14deg);
+    z-index: -1;
+    pointer-events: none;
 }
 
 .languageSwitch a:hover {
