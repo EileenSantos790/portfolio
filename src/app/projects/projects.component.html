@@ -3,12 +3,9 @@
   <div class="project-main-card">
     <nav>
       @for (project of projects; track $index) {
-        <button 
-          [class.active]="activeIndex === $index" 
-          (click)="setActive($index)" 
-          class="button">
-          {{ $index + 1 }}. {{ project.name }}
-        </button>
+      <button [class.active]="activeIndex === $index" (click)="setActive($index)" class="button">
+        {{ $index + 1 }}. {{ project.name }}
+      </button>
       }
     </nav>
 
@@ -58,17 +55,26 @@
             <p>Technologies</p>
             <div class="icons-tools">
               @for (tech of projects[activeIndex].technologies; track $index) {
-                <img src="/assets/skills-section/{{ tech }}.svg" alt="{{ tech }}">
+              <img src="/assets/skills-section/{{ tech }}.svg" alt="{{ tech }}">
               }
             </div>
           </div>
           <div class="project-image">
             <img [src]="projects[activeIndex].image" alt="Project Screenshot" />
           </div>
-          <div class="links">
-            <a [href]="projects[activeIndex].live" target="_blank" rel="noopener">Live Test</a>
-            <a [href]="projects[activeIndex].github" target="_blank" rel="noopener">GitHub</a>
+
+          <div class="nonResponsiveLinks">
+            <div class="links">
+              <a [href]="projects[activeIndex].live" target="_blank" rel="noopener">Live Test</a>
+              <a [href]="projects[activeIndex].github" target="_blank" rel="noopener">GitHub</a>
+            </div>
           </div>
+        </div>
+      </div>
+      <div class="responsiveLinks">
+        <div class="links">
+          <a [href]="projects[activeIndex].live" target="_blank" rel="noopener">Live Test</a>
+          <a [href]="projects[activeIndex].github" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </div>
