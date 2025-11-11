@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -12,6 +13,8 @@ export class NavbarComponent {
   activeSection: string = '';
   activeLanguage: string = 'EN';
   private isScrolling: boolean = false;
+
+  constructor(private router: Router) {}
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -36,17 +39,20 @@ export class NavbarComponent {
 
   setActiveSection(section: string, event: Event) {
     event.preventDefault();
+    const basePath = this.router.url.split('#')[0];
+
+    if (basePath && basePath !== '/' && basePath !== '') {
+      this.router.navigate([''], { fragment: section });
+      return;
+    }
+
     this.activeSection = section;
     this.isScrolling = true;
 
     const element = document.getElementById(section);
     if (element) {
-      // Desabilita smooth scroll temporariamente
       document.documentElement.style.scrollBehavior = 'auto';
-      
       element.scrollIntoView({ behavior: 'auto', block: 'start' });
-      
-      // Reabilita smooth scroll após o scroll instantâneo
       setTimeout(() => {
         document.documentElement.style.scrollBehavior = 'smooth';
         this.isScrolling = false;
