@@ -269,11 +269,12 @@ nav {
 
 @media (min-width: 1024px) {
   .responsiveLinks {
-    display: block;
+    display: none;
   }
 }
 
 @media (max-width: 1024px) {
+
   .content-inner {
     flex-direction: column-reverse;
     padding: 0;
