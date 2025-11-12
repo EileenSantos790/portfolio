@@ -61,38 +61,13 @@
     align-items: center;
     justify-content: center;
     gap: 19px;
+    background-image: url('/assets/skills-section/eclipse_reference.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: center / contain no-repeat url("data:image/svg+xml,%3Csvg width='375' height='391' viewBox='0 0 380 380' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M378.236 166.829C393.295 259.064 310.398 367.971 188.523 379.991C77.3927 381.057 0 285.53 0 176.159C0 66.7874 92.4734 -1.32562e-09 158.281 0C264.39 0 361.076 61.7294 378.236 166.829Z' fill='%2389BCD9' fill-opacity='0.07'/%3E%3C/svg%3E");
-        transition: opacity 0.2s ease-in-out;
-        opacity: 1;
-        z-index: 0;
-    }
-
-    &::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: center / contain no-repeat url("data:image/svg+xml,%3Csvg width='375' height='391' viewBox='0 0 465 466' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M346.89 384.132C274.541 443.292 138.777 425.955 67.4293 326.417C10.9413 230.709 54.9736 115.921 149.692 61.2357C244.41 6.54997 348.487 53.2406 381.391 110.232C434.445 202.125 429.329 316.722 346.89 384.132Z' fill='%2389BCD9' fill-opacity='0.2'/%3E%3C/svg%3E");
-        opacity: 0;
-        transition: opacity 0.2s ease-in-out;
-        z-index: 0;
-    }
-
-    &:hover::before {
-        opacity: 0;
-    }
-
-    &:hover::after {
-        opacity: 1;
-    }
-
-    >* {
-        position: relative;
-        z-index: 1;
+    &:hover {
+        background-image: url('/assets/skills-section/eclipse_reference_hover.svg');
     }
 
     >p {
