@@ -10,6 +10,8 @@ $error: #E44C36;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
+  padding-left: calc(50vw - 50% + 5%);
+  padding-right: calc(50vw - 50% + 5%);
 }
 
 footer {
@@ -17,7 +19,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 32px 0;
   height: 214px;
   font-size: 18px;
 
@@ -34,19 +35,25 @@ footer {
   p {
     color: $mainBgColor;
     font-size: 18px;
+    margin: 0; // remove default margins to control spacing precisely
   }
 }
 
 .left-section-wrapper {
   opacity: 1;
   transition: opacity 0.1s cubic-bezier(0.0, 0.4, 0.165, 1), transform 0.2s ease;
+  display: flex;
+  flex-direction: column; // stack texts under each other
+  align-items: flex-start;
+  gap: 16px; // 16px vertical spacing between Legal Notice and copyright
 }
 
 .legal-notice-mobile {
   display: none;
-  flex-direction: row;
+  flex-direction: column; // stack under each other on mobile too
   align-items: center;
   justify-content: center;
+  gap: 16px; // ensure 16px spacing on mobile as well
 }
 
 .footer-content {
@@ -68,52 +75,54 @@ footer {
   display: none;
 }
 
-.logo {
-  margin-bottom: 32px;
-  cursor: pointer;
+.logoHero {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  flex-direction: column;
   text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 32px;
 
-  img {
-    width: 60px;
-    height: 60px;
+  .logoHeroImg {
+    width: 56px;
+    height: 56px;
+    display: block;
+    transition: all 300ms ease-out;
   }
 
-  .nameLogoSmall,
-  .specificationLogoSmall {
-    font-family: 'Anta';
-    font-size: 18px;
+  .nameLogo {
+    font-family: 'Anta', sans-serif;
+    font-size: 16px;
+    color: $fontLightPurple;
+  }
+
+  .specificationLogo {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
     color: $mainBgColor;
-    font-weight: 400;
-  }
-
-  .nameLogoSmall {
-    font-weight: 700;
-  }
-
-  &:hover {
-    .nameLogoSmall,
-    .specificationLogoSmall {
-      color: $fontLightPurple;
-    }
+    font-weight: 300;
   }
 }
 
-@media (max-width: 1024px) {
+.logoHero:hover .nameLogo {
+  color: $fontLightPurple;
+}
+.logoHero:hover .specificationLogo {
+  color: $fontLightPurple;
+}
+
+@media (max-width: 740px) {
   .footer-section {
     width: 100%;
-    margin-left: 0;
-    margin-right: 0;
   }
 
   .legal-notice-mobile {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 16px;
   }
 
   .footer-content {
@@ -137,10 +146,11 @@ footer {
   }
 
   .legal-notice-mobile {
+
     a,
     p {
       font-size: 14px;
-      padding: 32px 8px;
+      padding: 32px 0; // keep vertical padding, remove horizontal to avoid doubling with gap
     }
   }
 }

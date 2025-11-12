@@ -6,16 +6,20 @@
         <p>{{ translations.footer.copyright }}</p>
       </div>
 
-      <a href="#" class="logo">
-        <img src="/assets/hero-section/icons/Logo_black.svg" alt="Logo">
-        <span class="nameLogoSmall">E.Santos</span>
-        <span class="specificationLogoSmall">{{ translations.footer.developer }}</span>
+      <a href="#" class="logoHero" aria-label="E.Santos Developer">
+        <img class="logoHeroImg" src="/assets/hero-section/icons/Logo_black.svg" alt="Logo">
+        <span class="nameLogo">E.Santos</span>
+        <span class="specificationLogo">{{ translations.footer.developer }}</span>
       </a>
 
       <div class="link-wrapper">
         <a href="https://github.com/EileenSantos790" target="_blank" rel="noopener"
           (mouseenter)="githubHovered = true" (mouseleave)="githubHovered = false">
           <img [src]="githubHovered ? '/assets/footer-section/github-hover.svg' : '/assets/footer-section/github.svg'" alt="GitHub">
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener"
+          (mouseenter)="linkedinHovered = true" (mouseleave)="linkedinHovered = false">
+          <img [src]="linkedinHovered ? '/assets/footer-section/linkedin-hover.svg' : '/assets/footer-section/linkedin.svg'" alt="LinkedIn">
         </a>
         <a href="mailto:eileen.santos@outlook.de" target="_blank" rel="noopener"
           (mouseenter)="mailHovered = true" (mouseleave)="mailHovered = false">
@@ -26,6 +30,9 @@
       <div class="link-wrapper-mobile">
         <a href="https://github.com/EileenSantos790" target="_blank" rel="noopener">
           <img src="/assets/footer-section/github.svg" alt="GitHub">
+        </a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener">
+          <img src="/assets/footer-section/linkedin.svg" alt="LinkedIn">
         </a>
         <a href="mailto:eileen.santos@outlook.de" target="_blank" rel="noopener">
           <img src="/assets/footer-section/email.svg" alt="Mail mobile">
