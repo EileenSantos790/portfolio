@@ -107,7 +107,7 @@ export class TranslationService {
       },
       contact: {
         title: 'Contact me',
-        description: 'Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work. Example: Feel free to get in touch with job offers or opportunities such as: ...',
+        description: 'Feel free to get in touch with opportunities such as Frontend Developer or Web Developer roles. I’m passionate about building clean, responsive, and user-focused web experiences that make an impact. Let’s connect and create something great!',
         email: 'E-mail',
         phone: 'Phone',
         tel: 'Tel',
@@ -121,7 +121,7 @@ export class TranslationService {
         privacyPolicy: 'Privacy policy',
         privacyPolicyText: "I've read the <a href='#'>privacy policy</a> and agree to the processing of my data as outlined.",
         privacyPolicyRequired: 'Please accept the privacy policy.',
-        sendMessage: 'Send message',
+        sendMessage: 'Send',
         messageSent: 'Message sent successfully!',
         namePlaceholder: 'Your name',
         emailPlaceholder: 'Your email',
