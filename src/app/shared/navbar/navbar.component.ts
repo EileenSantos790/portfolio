@@ -55,7 +55,14 @@ export class NavbarComponent {
     const basePath = this.router.url.split('#')[0];
 
     if (basePath && basePath !== '/' && basePath !== '') {
-      this.router.navigate([''], { fragment: section });
+      this.router.navigate([''], { fragment: section }).then(() => {
+        this.isScrolling = true;
+        const el = document.getElementById(section);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        setTimeout(() => (this.isScrolling = false), 800);
+      });
       return;
     }
 
@@ -64,12 +71,11 @@ export class NavbarComponent {
 
     const element = document.getElementById(section);
     if (element) {
-      document.documentElement.style.scrollBehavior = 'auto';
-      element.scrollIntoView({ behavior: 'auto', block: 'start' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Clear scrolling state after the animation likely finished
       setTimeout(() => {
-        document.documentElement.style.scrollBehavior = 'smooth';
         this.isScrolling = false;
-      }, 100);
+      }, 800);
     }
   }
 
