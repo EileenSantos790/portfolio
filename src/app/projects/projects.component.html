@@ -51,6 +51,21 @@
         </div>
 
         <div class="right-section">
+          <div class="responsive-meta">
+            <h3 class="project-name">{{ projects[activeIndex].name }}</h3>
+            <div class="tech-row">
+              <span class="label">Technologies:</span>
+              <ul class="tech-list">
+                @for (tech of projects[activeIndex].technologies; track $index) {
+                <li class="tech-item">{{ tech }}</li>
+                }
+              </ul>
+            </div>
+            <div class="duration">
+              <span class="label">Duration:</span>
+              <span>{{ projects[activeIndex].duration }}</span>
+            </div>
+          </div>
           <div class="tools">
             <p>Technologies</p>
             <div class="icons-tools">

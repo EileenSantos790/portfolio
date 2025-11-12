@@ -140,6 +140,51 @@ nav {
   gap: 16px;
   padding: 16px;
 
+  .responsive-meta {
+    display: none;
+    width: 100%;
+    color: $fontLightPurple;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 28px 0 24px 0;
+
+    .project-name {
+      font-size: 24px;
+      font-weight: 400;
+      margin: 0 0 12px 0;
+      color: $lightBlue;
+    }
+
+    .label {
+      color: $fontLightPurple;
+      font-size: 16px;
+      margin-right: 8px;
+    }
+
+    .tech-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+
+      .tech-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 12px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        color: $fontLightPurple;
+      }
+    }
+
+    .duration {
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+  }
+
   .tools {
     display: flex;
     justify-content: center;
@@ -148,7 +193,6 @@ nav {
 
     p {
       color: $fontLightPurple;
-      // font-family: 'Josefin Sans';
       font-size: 18px;
       margin-bottom: 12px;
     }
@@ -171,17 +215,19 @@ nav {
     overflow: hidden;
     border-radius: 30px;
     display: block;
-    /* Let the image decide the height based on its intrinsic aspect ratio */
 
     img {
       display: block;
       max-width: 100%;
-      width: auto; /* do not upscale beyond intrinsic width */
-      height: auto; /* maintain aspect ratio */
-      margin: 0 auto; /* center if image narrower than container */
+      width: auto;
+      height: auto;
+      /* maintain aspect ratio */
+      margin: 0 auto;
       transition: opacity 0.2s ease;
       border-radius: 30px;
     }
+
+    margin-bottom: 24px;
   }
 }
 
@@ -222,7 +268,7 @@ nav {
 }
 
 @media (min-width: 1024px) {
-  .responsiveLinks{
+  .responsiveLinks {
     display: block;
   }
 }
@@ -250,7 +296,7 @@ nav {
   .content-wrapper {
     flex-direction: column;
     align-items: center;
-    border-radius: 30px 30px 30px 30px;
+    border-radius: 0 30px 30px 30px;
   }
 
   .left-section,
@@ -260,10 +306,12 @@ nav {
 
   .task p {
     margin-left: 0;
+    font-size: 16px;
   }
 
   nav {
     flex-wrap: nowrap;
+    padding-left: 0;
 
     .button {
       padding: 24px;
@@ -274,11 +322,18 @@ nav {
     display: none;
   }
 
- .nonResponsiveLinks{
+  .right-section {
+    .responsive-meta {
+      display: block;
+      padding: 28px 0 24px 0;
+    }
+  }
+
+  .nonResponsiveLinks {
     display: none;
   }
 
-  .responsiveLinks{
+  .responsiveLinks {
     display: block;
   }
 
@@ -287,6 +342,20 @@ nav {
     margin-bottom: 38px;
     margin-top: 32px;
     gap: 16px;
+  }
+
+  .task .task-header .bullet-point img {
+    width: 29px !important;
+    height: 26px !important;
+  }
+
+  .task .task-header .task-title h3 {
+    font-size: 18px;
+    color: $lightBlue;
+  }
+
+  .left-section .task .task-header .task-title span {
+    display: none;
   }
 }
 
@@ -318,8 +387,13 @@ nav {
   }
 
   .task-header .bullet-point img {
-    width: 24px;
-    height: 24px;
+    width: 29px !important;
+    height: 26px !important;
+  }
+
+  .task .task-header .task-title h3 {
+    font-size: 18px;
+    color: $lightBlue;
   }
 
   .tools img {
@@ -327,4 +401,3 @@ nav {
     height: 30px;
   }
 }
-
