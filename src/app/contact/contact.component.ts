@@ -51,13 +51,15 @@ export class ContactComponent {
   }
 
   post = {
-    endPoint: 'https://your-domain.com/sendMail.php',
+    // Use relative URL to always hit the same origin (avoids CORS across www/non-www)
+    endPoint: '/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
-        'Content-Type': 'text/plain',
-        responseType: 'text' as const,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
       },
+      responseType: 'json' as const,
     },
   };
 
@@ -75,13 +77,15 @@ export class ContactComponent {
         this.post.body(formData),
         this.post.options
       ).subscribe({
-        next: () => {
+        next: (response: any) => {
+          //console.log('Mail sent successfully:', response);
           this.displayToast();
           this.contactForm.reset();
           this.submitted = false;
         },
         error: (err) => {
           console.error('Mail send failed:', err);
+          alert('Mail send failed. try again!');
         }
       });
     }
