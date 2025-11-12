@@ -38,6 +38,9 @@
             <ng-container *ngIf="(contactForm.get('name')?.errors?.['required'] && (contactForm.get('name')?.touched || submitted))">
               <div class="input-error">{{ translations.contact.nameRequired }}</div>
             </ng-container>
+            <ng-container *ngIf="(contactForm.get('name')?.errors?.['invalidName'] && !contactForm.get('name')?.errors?.['required'] && (contactForm.get('name')?.touched || submitted))">
+              <div class="input-error">Name cannot contain numbers</div>
+            </ng-container>
             <ng-container *ngIf="!contactForm.get('name')?.errors || (!contactForm.get('name')?.touched && !submitted)">
               {{ translations.contact.yourName }}
             </ng-container>

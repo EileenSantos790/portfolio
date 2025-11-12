@@ -20,8 +20,21 @@ export function emailWithTLDValidator(control: AbstractControl): ValidationError
   const value = control.value;
   if (!value) return null;
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const emailRegex = /^[a-zA-Z0-9]+([._%+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+([.-][a-zA-Z0-9]+)*\.[a-zA-Z]{2,}$/;
   return emailRegex.test(value) ? null : { email: true };
+}
+
+/**
+ * Custom name validator to ensure no numbers are present.
+ * @param control The form control to validate.
+ * @returns Validation error object or null if valid.
+ */
+export function nameWithoutNumbersValidator(control: AbstractControl): ValidationErrors | null {
+  const value = control.value;
+  if (!value) return null;
+
+  const hasNumbers = /\d/.test(value);
+  return hasNumbers ? { invalidName: true } : null;
 }
 
 @Component({
@@ -54,7 +67,7 @@ export class ContactComponent {
     });
 
     this.contactForm = this.fb.group({
-      name: ['', Validators.required],
+      name: ['', [Validators.required, nameWithoutNumbersValidator]],
       email: ['', [Validators.required, emailWithTLDValidator]],
       message: ['', Validators.required],
       privacyPolicy: [false, Validators.requiredTrue]
@@ -146,6 +159,9 @@ export class ContactComponent {
         return this.translations.contact.emailRequired;
       }
       if (field === 'name') {
+        if (control.hasError('invalidName')) {
+          return 'Name cannot contain numbers';
+        }
         return this.translations.contact.nameRequired;
       }
       if (field === 'message') {
