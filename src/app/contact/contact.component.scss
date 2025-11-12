@@ -379,6 +379,7 @@ button {
 }
 
 @media (max-width: 900px) {
+
   h2 {
     font-size: 32px !important;
     padding-top: 0 !important;
@@ -390,19 +391,17 @@ button {
 
   .description {
     flex-direction: column-reverse;
-    margin-bottom: 32px;
+    margin-bottom: 0 !important;
   }
 
   .contact-main {
     width: 100%;
-    margin: 0 22px;
   }
 
   .contact-data {
     flex-direction: column-reverse;
     margin: 0;
     width: auto;
-    gap: 16px;
 
     span {
       font-size: 18px;
@@ -453,16 +452,21 @@ button {
     display: none;
   }
 
-  .button-wrapper {
-    margin-top: 60px;
-  }
-
   .input-data {
-    flex-direction: column-reverse;
+    flex-direction: column;
+    gap: 0px !important;
   }
 
   .headline {
     margin-bottom: 32px;
+  }
+
+  .form-field{
+    margin-bottom: 24px;
+  }
+
+  .button-wrapper {
+    margin-bottom: 76px;
   }
 
 }
