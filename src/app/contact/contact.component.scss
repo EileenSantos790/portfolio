@@ -381,6 +381,7 @@ button {
 @media (max-width: 900px) {
   h2 {
     font-size: 32px !important;
+    padding-top: 0 !important;
   }
 
   .arrow-up {
@@ -389,6 +390,7 @@ button {
 
   .description {
     flex-direction: column-reverse;
+    margin-bottom: 32px;
   }
 
   .contact-main {
@@ -400,7 +402,7 @@ button {
     flex-direction: column-reverse;
     margin: 0;
     width: auto;
-    gap: 14px;
+    gap: 16px;
 
     span {
       font-size: 18px;
@@ -412,6 +414,9 @@ button {
   }
 
   .email {
+
+    padding-bottom: 32px;
+
     a {
       img {
         margin-right: 13px;
