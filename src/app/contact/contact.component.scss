@@ -469,18 +469,16 @@ button {
 
 @media (max-width: 1023px) {
   .responsive-placeholder::placeholder {
-    opacity: 1;
-    color: $lightBlue;
-    transition: color 0.3s ease;
+    opacity: 0;
   }
 
   .placeholder-error::placeholder {
-    color: $error;
+    opacity: 0;
   }
 
   .form-field:not(.checkbox) label,
   .form-field:not(.checkbox) .input-error {
-    display: none !important;
+    display: block !important;
   }
 
   .form-field.checkbox label,
