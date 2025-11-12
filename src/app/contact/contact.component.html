@@ -1,7 +1,7 @@
 <section id="contact">
   <div class="contact-main">
     <div class="headline">
-      <h2>Contact me</h2>
+      <h2>{{ translations.contact.title }}</h2>
       <a class="arrow-up" (mouseover)="arrowIsHovered = true" (mouseout)="arrowIsHovered = false" href="#">
         <img 
           [src]="arrowIsHovered ? '/assets/Why_me_Section/Arrow_up_hover.svg' : '/assets/Why_me_Section/Arrow_up.svg'" 
@@ -11,11 +11,7 @@
 
     <div class="description">
       <div class="contact-me-text">
-        <p>
-          Encourage people to contact you and describe what role you are interested in. 
-          Show that you will add value to their projects through your work.
-          Example: Feel free to get in touch with job offers or opportunities such as: ...
-        </p>
+        <p>{{ translations.contact.description }}</p>
       </div>
       <div class="contact-data">
         <div class="email" (mouseover)="mailIsHovered = true" (mouseout)="mailIsHovered = false">
@@ -23,14 +19,14 @@
             <img 
               [src]="mailIsHovered ? '/assets/contact-section/Mail_hover.svg' : '/assets/contact-section/Mail.svg'" 
               alt="Mail">
-            <span>E-mail: eileen.santo&#64;outlook.de</span>
+            <span>{{ translations.contact.email }}: eileen.santo&#64;outlook.de</span>
           </a>
         </div>
         <div (mouseover)="phoneIsHovered = true" (mouseout)="phoneIsHovered = false" class="phone">
           <img 
             [src]="phoneIsHovered ? '/assets/contact-section/phone_hover.svg' : '/assets/contact-section/phone.svg'" 
             alt="Phone">
-          <span>Tel: 0157 123 456 68</span>
+          <span>{{ translations.contact.tel }}: 0157 123 456 68</span>
         </div>
       </div>
     </div>
@@ -40,10 +36,10 @@
         <div class="form-field">
           <label for="name">
             <ng-container *ngIf="(contactForm.get('name')?.errors?.['required'] && (contactForm.get('name')?.touched || submitted))">
-              <div class="input-error">Your Name is required.</div>
+              <div class="input-error">{{ translations.contact.nameRequired }}</div>
             </ng-container>
             <ng-container *ngIf="!contactForm.get('name')?.errors || (!contactForm.get('name')?.touched && !submitted)">
-              Your name
+              {{ translations.contact.yourName }}
             </ng-container>
           </label>
           <input
@@ -62,13 +58,13 @@
         <div class="form-field">
           <label for="email">
             <ng-container class="input-error" *ngIf="(contactForm.get('email')?.errors?.['required'] && (contactForm.get('email')?.touched || submitted))">
-              <div class="input-error">Email is required.</div>
+              <div class="input-error">{{ translations.contact.emailRequired }}</div>
             </ng-container>
             <ng-container class="input-error" *ngIf="(contactForm.get('email')?.errors?.['email'] && !contactForm.get('email')?.errors?.['required'] && (contactForm.get('email')?.touched || submitted))">
-              <div class="input-error">Invalid email format.</div>
+              <div class="input-error">{{ translations.contact.invalidEmail }}</div>
             </ng-container>
             <ng-container *ngIf="!contactForm.get('email')?.errors || (!contactForm.get('email')?.touched && !submitted)">
-              Your Email
+              {{ translations.contact.yourEmail }}
             </ng-container>
           </label>
           <input
@@ -88,10 +84,10 @@
       <div class="form-field">
         <label for="message">
           <ng-container *ngIf="(contactForm.get('message')?.invalid && (contactForm.get('message')?.touched || submitted))">
-            <div class="input-error">Message is required.</div>
+            <div class="input-error">{{ translations.contact.messageRequired }}</div>
           </ng-container>
           <ng-container *ngIf="!contactForm.get('message')?.invalid || (!contactForm.get('message')?.touched && !submitted)">
-            Your Message
+            {{ translations.contact.yourMessage }}
           </ng-container>
         </label>
         <textarea 
@@ -126,17 +122,17 @@
             [src]="getCheckboxImage()" 
             alt="Checkbox state" 
           />
-          <p>I've read the <a href="#"> privacy policy </a> and agree to the processing of my data as outlined.</p>
+          <p [innerHTML]="translations.contact.privacyPolicyText"></p>
         </label>
 
         <div class="error" *ngIf="hasPrivacyError()">
-          Please accept the privacy policy.
+          {{ translations.contact.privacyPolicyRequired }}
         </div>
       </div>
 
       <div class="button-wrapper">
         <button [ngClass]="{ 'disabled': contactForm.invalid }" type="submit">
-          Send
+          {{ translations.contact.sendMessage }}
         </button>
       </div>
     </form>
@@ -145,7 +141,7 @@
   <div class="toast" *ngIf="showToast">
     <div class="toast-content">
       <img src="/assets/contact-section/Check_Box_3.svg" alt="Success icon">
-      <p>Your message has been sent successfully.</p>
+      <p>{{ translations.contact.messageSent }}</p>
     </div>
   </div>
 </section>

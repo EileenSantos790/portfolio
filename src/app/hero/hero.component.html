@@ -4,7 +4,7 @@
       <div class="logoHero">
         <div class="logoHeroImg"></div>
         <span class="nameLogo">E.Santos</span>
-        <span class="specificationLogo">developer</span>
+        <span class="specificationLogo">{{ translations.hero.developer }}</span>
       </div>
     </div>
     <div class="menuTrigger">
@@ -19,14 +19,14 @@
       <!-- Overlay centered over main image -->
       <nav class="overlayCard" *ngIf="isMenuOpen" (click)="$event.stopPropagation()">
         <ul class="overlayList">
-          <li><a href="#about" (click)="closeMenu()">Why me</a></li>
-          <li><a href="#skills" (click)="closeMenu()">Skills</a></li>
-          <li><a href="#projects" (click)="closeMenu()">Projects</a></li>
-          <li><a href="#contact" (click)="closeMenu()">Contact</a></li>
+          <li><a href="#about" (click)="closeMenu()">{{ translations.navbar.whyMe }}</a></li>
+          <li><a href="#skills" (click)="closeMenu()">{{ translations.navbar.skills }}</a></li>
+          <li><a href="#projects" (click)="closeMenu()">{{ translations.navbar.projects }}</a></li>
+          <li><a href="#contact" (click)="closeMenu()">{{ translations.navbar.contact }}</a></li>
         </ul>
         <div class="overlayLang">
-          <span class="lang">DE</span>
-          <span class="lang active">EN</span>
+          <span class="lang" [class.active]="activeLanguage === 'DE'" (click)="setActiveLanguage('DE')">DE</span>
+          <span class="lang" [class.active]="activeLanguage === 'EN'" (click)="setActiveLanguage('EN')">EN</span>
         </div>
       </nav>
       <img class="mainImg" src="./assets/hero-section/hero_Container_img.png" />
@@ -37,7 +37,7 @@
           <div class="logoHero">
             <div class="logoHeroImg"></div>
             <span class="nameLogo">E.Santos</span>
-            <span class="specificationLogo">developer</span>
+            <span class="specificationLogo">{{ translations.hero.developer }}</span>
           </div>
         </div>
         <div class="socialMediaIconsHero">
@@ -71,7 +71,7 @@
       </div>
       <div class="heroHeadline">
         <h1 class="heroSectionTitle">Eileen Santos</h1>
-        <h3>FRONTEND DEVELOPER</h3>
+        <h3>{{ translations.hero.frontendDeveloper }}</h3>
       </div>
       <div class="goDownHero">
         <a href="#about" aria-label="Go to About Section">

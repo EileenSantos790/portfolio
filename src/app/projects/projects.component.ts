@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslationService, Translations } from '../services/translation.service';
 
 interface Project {
   name: string;
@@ -21,6 +22,7 @@ interface Project {
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent {
+  translations: Translations;
   projects: Project[] = [
     {
       name: 'Join',
@@ -47,6 +49,14 @@ export class ProjectsComponent {
   ];
 
   activeIndex = 0;
+
+  constructor(private translationService: TranslationService) {
+    this.translations = this.translationService.getTranslations();
+    
+    this.translationService.getCurrentLanguage().subscribe(() => {
+      this.translations = this.translationService.getTranslations();
+    });
+  }
 
   setActive(index: number) {
     this.activeIndex = index;

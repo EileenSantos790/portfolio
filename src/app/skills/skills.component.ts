@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslationService, Translations } from '../services/translation.service';
 
 @Component({
   selector: 'app-skills',
@@ -9,6 +10,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
+  translations: Translations;
+  
   skills = [
     { name: 'Angular', icon: '../../assets/skills-section/Angular.svg' },
     { name: 'TypeScript', icon: '../../assets/skills-section/TypeScript.svg' },
@@ -25,4 +28,12 @@ export class SkillsComponent {
   learningSkills = [
     { name: 'Angular', icon: '../../assets/skills-section/Angular.svg' }
   ];
+
+  constructor(private translationService: TranslationService) {
+    this.translations = this.translationService.getTranslations();
+    
+    this.translationService.getCurrentLanguage().subscribe(() => {
+      this.translations = this.translationService.getTranslations();
+    });
+  }
 }

@@ -1,5 +1,5 @@
 <section id="skills" class="skillsContainer">
-  <h2>My skills</h2>
+  <h2>{{ translations.skills.title }}</h2>
 
   <div class="skillsContent">
     <div class="skillsGrid">
@@ -10,21 +10,18 @@
     </div>
 
     <div class="learningSection">
-      <p>I am currently learning</p>
+      <p>{{ translations.skills.currentlyLearning }}</p>
       <div class="learningIcons">
         <div class="learningIcon" *ngFor="let skill of learningSkills">
           <img [src]="skill.icon" [alt]="skill.name" />
           <span>{{ skill.name }}</span>
         </div>
       </div>
-      <p class="motivationalText">Didn’t find the skill you’re looking for? I’m always motivated to learn new areas and
-        expand my expertise. So please don’t hesitate to contact me — I’m excited to develop new skills and take on new
-        challenges!
-      </p>
+      <p class="motivationalText">{{ translations.skills.motivationalText }}</p>
     </div>
 
     <div class="responsiveLearningSection">
-      <p class="responsiveLearningSectionHeadline">I am currently learning</p>
+      <p class="responsiveLearningSectionHeadline">{{ translations.skills.currentlyLearning }}</p>
     </div>
     <div class="responsiveLearningContainer">
       <div class="responsiveIconContainer">
@@ -33,12 +30,9 @@
           <span>{{ skill.name }}</span>
         </div>
       </div>
-      <p class="responsiveMotivationalText">Didn’t find the skill you’re looking for? I’m always motivated to learn new
-        areas and expand my expertise. So please don’t hesitate to contact me — I’m excited to develop new skills and
-        take on new challenges!
-      </p>
+      <p class="responsiveMotivationalText">{{ translations.skills.motivationalText }}</p>
     </div>
   </div>
 
-  <button class="buttonSecondary">Let´s talk</button>
+  <button class="buttonSecondary">{{ translations.skills.letsTalk }}</button>
 </section>

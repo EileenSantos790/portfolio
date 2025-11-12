@@ -1,5 +1,5 @@
 <section id="projects">
-  <h2>My Projects</h2>
+  <h2>{{ translations.projects.title }}</h2>
   <div class="project-main-card">
     <nav>
       @for (project of projects; track $index) {
@@ -18,8 +18,8 @@
                 <img src="/assets/projects-section/eclipse.svg" alt="bullet point">
               </div>
               <div class="task-title">
-                <h3>About the project</h3>
-                <span>Duration: {{ projects[activeIndex].duration }}</span>
+                <h3>{{ translations.projects.aboutProject }}</h3>
+                <span>{{ translations.projects.duration }}: {{ projects[activeIndex].duration }}</span>
               </div>
             </div>
             <p>{{ projects[activeIndex].about }}</p>
@@ -31,7 +31,7 @@
                 <img src="/assets/projects-section/eclipse.svg" alt="bullet point">
               </div>
               <div class="task-title">
-                <h3>How I have organised my work process</h3>
+                <h3>{{ translations.projects.howOrganized }}</h3>
               </div>
             </div>
             <p>{{ projects[activeIndex].process }}</p>
@@ -43,7 +43,7 @@
                 <img src="/assets/projects-section/eclipse.svg" alt="bullet point">
               </div>
               <div class="task-title">
-                <h3>My group work experience</h3>
+                <h3>{{ translations.projects.groupExperience }}</h3>
               </div>
             </div>
             <p>{{ projects[activeIndex].experience }}</p>
@@ -54,7 +54,7 @@
           <div class="responsive-meta">
             <h3 class="project-name">{{ projects[activeIndex].name }}</h3>
             <div class="tech-row">
-              <span class="label">Technologies:</span>
+              <span class="label">{{ translations.projects.technologies }}:</span>
               <ul class="tech-list">
                 @for (tech of projects[activeIndex].technologies; track $index) {
                 <li class="tech-item">{{ tech }}</li>
@@ -62,12 +62,12 @@
               </ul>
             </div>
             <div class="duration">
-              <span class="label">Duration:</span>
+              <span class="label">{{ translations.projects.duration }}:</span>
               <span>{{ projects[activeIndex].duration }}</span>
             </div>
           </div>
           <div class="tools">
-            <p>Technologies</p>
+            <p>{{ translations.projects.technologies }}</p>
             <div class="icons-tools">
               @for (tech of projects[activeIndex].technologies; track $index) {
               <img src="/assets/skills-section/{{ tech }}.svg" alt="{{ tech }}">
@@ -80,16 +80,16 @@
 
           <div class="nonResponsiveLinks">
             <div class="links">
-              <a [href]="projects[activeIndex].live" target="_blank" rel="noopener">Live Test</a>
-              <a [href]="projects[activeIndex].github" target="_blank" rel="noopener">GitHub</a>
+              <a [href]="projects[activeIndex].live" target="_blank" rel="noopener">{{ translations.projects.liveTest }}</a>
+              <a [href]="projects[activeIndex].github" target="_blank" rel="noopener">{{ translations.projects.github }}</a>
             </div>
           </div>
         </div>
       </div>
       <div class="responsiveLinks">
         <div class="links">
-          <a [href]="projects[activeIndex].live" target="_blank" rel="noopener">Live Test</a>
-          <a [href]="projects[activeIndex].github" target="_blank" rel="noopener">GitHub</a>
+          <a [href]="projects[activeIndex].live" target="_blank" rel="noopener">{{ translations.projects.liveTest }}</a>
+          <a [href]="projects[activeIndex].github" target="_blank" rel="noopener">{{ translations.projects.github }}</a>
         </div>
       </div>
     </div>

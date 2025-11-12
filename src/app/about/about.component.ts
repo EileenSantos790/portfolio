@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import Typed from 'typed.js';
+import { TranslationService, Translations } from '../services/translation.service';
 
 @Component({
   selector: 'app-about',
@@ -14,15 +15,31 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
   
   currentIcon: string = '../../assets/Why_me_Section/Location.svg';
   fadeClass: string = 'fade-in';
+  translations: Translations;
   private typed?: Typed;
   private previousIconIndex = 0;
 
+  constructor(private translationService: TranslationService) {
+    this.translations = this.translationService.getTranslations();
+    
+    this.translationService.getCurrentLanguage().subscribe(() => {
+      this.translations = this.translationService.getTranslations();
+      this.restartTyped();
+    });
+  }
+
   ngAfterViewInit(): void {
+    this.initTyped();
+  }
+
+  private initTyped(): void {
+    const lang = this.translationService.getCurrentLanguageValue();
+    const strings = lang === 'EN' 
+      ? [' located in Hannover..', ' open to work remote...']
+      : [' in Hannover ansässig..', ' offen für Remote-Arbeit...'];
+
     const options = {
-      strings: [
-        ' located in Hannover..',
-        ' open to work remote...'
-      ],
+      strings,
       typeSpeed: 50,
       backSpeed: 30,
       backDelay: 2000,
@@ -37,6 +54,15 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
     };
     
     this.typed = new Typed(this.typedElement.nativeElement, options);
+  }
+
+  private restartTyped(): void {
+    if (this.typed) {
+      this.typed.destroy();
+      if (this.typedElement) {
+        this.initTyped();
+      }
+    }
   }
 
   changeIcon(index: number): void {

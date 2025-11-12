@@ -1,20 +1,15 @@
 <section id="about" class="aboutContainer">
-    <h2>Why me</h2>
+    <h2>{{ translations.about.title }}</h2>
     <div class="aboutTextContent">
         <div class="textAnimationContainer">
             <img [src]="currentIcon" [class]="fadeClass" alt="About Me" />
             <span class="spaceAnimation">
-                <span class="highlight">I am&nbsp;</span><span #typedElement></span>
+                <span class="highlight">{{ translations.about.iAm }}&nbsp;</span><span #typedElement></span>
             </span>
         </div>
         <div class="textArea">
-            <span>I’m passionate about coding because it allows me to turn ideas into real, working solutions. I enjoy
-                the
-                analytical process of breaking down complex problems and finding creative, efficient ways to solve them.
-                Coding constantly challenges me to learn, improve, and think differently. I also value the collaborative
-                side of development — sharing ideas, building with others, and seeing how teamwork can create something
-                greater than the sum of its parts.</span>
-            <button class="buttonFirst">Let´s talk</button>
+            <span>{{ translations.about.description }}</span>
+            <button class="buttonFirst">{{ translations.about.letsTalk }}</button>
         </div>
     </div>
 

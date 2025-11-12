@@ -9,6 +9,7 @@ import {
   ValidationErrors
 } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { TranslationService, Translations } from '../services/translation.service';
 
 /**
  * Custom email validator to ensure TLD is present.
@@ -32,6 +33,7 @@ export function emailWithTLDValidator(control: AbstractControl): ValidationError
 })
 export class ContactComponent {
   http = inject(HttpClient);
+  translations: Translations;
 
   contactForm: FormGroup;
   submitted = false;
@@ -41,7 +43,16 @@ export class ContactComponent {
   phoneIsHovered = false;
   showToast = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private translationService: TranslationService
+  ) {
+    this.translations = this.translationService.getTranslations();
+    
+    this.translationService.getCurrentLanguage().subscribe(() => {
+      this.translations = this.translationService.getTranslations();
+    });
+
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, emailWithTLDValidator]],
@@ -132,24 +143,24 @@ export class ContactComponent {
 
     if (hasError) {
       if (field === 'email') {
-        return 'Email is required';
+        return this.translations.contact.emailRequired;
       }
       if (field === 'name') {
-        return 'Your name is required';
+        return this.translations.contact.nameRequired;
       }
       if (field === 'message') {
-        return 'Message is required';
+        return this.translations.contact.messageRequired;
       }
     }
 
     if (field === 'email') {
-      return 'Your Email';
+      return this.translations.contact.emailPlaceholder;
     }
     if (field === 'name') {
-      return 'Your Name';
+      return this.translations.contact.namePlaceholder;
     }
     if (field === 'message') {
-      return 'Your Message';
+      return this.translations.contact.messagePlaceholder;
     }
 
     return '';

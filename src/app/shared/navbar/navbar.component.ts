@@ -1,6 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { TranslationService, Language, Translations } from '../../services/translation.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,10 +12,22 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent {
   activeSection: string = '';
-  activeLanguage: string = 'EN';
+  activeLanguage: Language = 'EN';
   private isScrolling: boolean = false;
+  translations: Translations;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private translationService: TranslationService
+  ) {
+    this.activeLanguage = this.translationService.getCurrentLanguageValue();
+    this.translations = this.translationService.getTranslations();
+    
+    this.translationService.getCurrentLanguage().subscribe(lang => {
+      this.activeLanguage = lang;
+      this.translations = this.translationService.getTranslations();
+    });
+  }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -60,8 +73,8 @@ export class NavbarComponent {
     }
   }
 
-  setActiveLanguage(language: string, event: Event) {
+  setActiveLanguage(language: Language, event: Event) {
     event.preventDefault();
-    this.activeLanguage = language;
+    this.translationService.setLanguage(language);
   }
 }
