@@ -187,4 +187,11 @@ export class ContactComponent {
     setTimeout(() => this.showToast = true, 10);
     setTimeout(() => this.showToast = false, 3000);
   }
+
+  onEmailClick(event: Event) {
+    const scrollPosition = window.pageYOffset;
+    window.location.href = 'mailto:eileen.santos@outlook.de';
+    setTimeout(() => window.scrollTo(0, scrollPosition), 0);
+    setTimeout(() => window.scrollTo(0, scrollPosition), 100);
+  }
 }

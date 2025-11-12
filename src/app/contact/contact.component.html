@@ -14,13 +14,11 @@
         <p>{{ translations.contact.description }}</p>
       </div>
       <div class="contact-data">
-        <div class="email" (mouseover)="mailIsHovered = true" (mouseout)="mailIsHovered = false">
-          <a href="mailto:eileen.santos@outlook.de">
-            <img 
-              [src]="mailIsHovered ? '/assets/contact-section/Mail_hover.svg' : '/assets/contact-section/Mail.svg'" 
-              alt="Mail">
-            <span>{{ translations.contact.email }}: eileen.santos&#64;outlook.de</span>
-          </a>
+        <div class="email" (mouseover)="mailIsHovered = true" (mouseout)="mailIsHovered = false" (click)="onEmailClick($event)" style="cursor: pointer;">
+          <img 
+            [src]="mailIsHovered ? '/assets/contact-section/Mail_hover.svg' : '/assets/contact-section/Mail.svg'" 
+            alt="Mail">
+          <span>{{ translations.contact.email }}: eileen.santos&#64;outlook.de</span>
         </div>
         <div (mouseover)="phoneIsHovered = true" (mouseout)="phoneIsHovered = false" class="phone">
           <img 
