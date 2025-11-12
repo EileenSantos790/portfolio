@@ -9,7 +9,7 @@ $done_color: #97E163;
   margin: 0;
   scroll-behavior: smooth;
   overscroll-behavior: contain;
-  font-family: "Josefine", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   box-sizing: border-box;
 }
 
@@ -64,6 +64,10 @@ h3 {
     font-family: 'Josefine', sans-serif;
 }
 
+p {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
 @font-face {
   font-family: 'Anta';
   src: url('/assets/fonts/Anta/Anta-Regular.ttf') format('truetype');
@@ -72,14 +76,14 @@ h3 {
 }
 
 @font-face {
-  font-family: 'Josefine';
+  font-family: 'Josefin Sans';
   src: url('/assets/fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Josefine';
+  font-family: 'Josefin Sans';
   src: url('/assets/fonts/Josefin_Sans/static/JosefinSans-Italic-VariableFont_wght.ttf') format('truetype');
   font-weight: normal;
   font-style: italic;
