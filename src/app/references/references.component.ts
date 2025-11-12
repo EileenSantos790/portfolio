@@ -18,22 +18,19 @@ interface Reference {
 export class ReferencesComponent {
   references: Reference[] = [
     {
-      name: 'Person 1',
+      name: 'Tess Puschmann',
       project: 'Join',
-      reference: 'Kommentar TO DO',
-      link: 'https://www.linkedin.com'
+      reference: 'A reliable team member who stays focused during busy project phases. Handles deadlines well and keeps an overview even when things get hectic. Brings structure and calmness to the team.',
     },
     {
-      name: 'Person 2',
+      name: 'Annabella Lopez',
       project: 'Join',
-      reference: "Kommentar TO DO",
-      link: 'https://www.linkedin.com'
+      reference: 'Shows good organizational skills and keeps projects on track. Works thoughtfully on design tasks and communicates clearly about progress and priorities.',
     },
     {
-      name: 'Person 3',
+      name: 'Sara Pohl',
       project: 'El-Pollo-Loco',
-      reference: "Kommentar TO DO",
-      link: 'https://www.linkedin.com'
+      reference: 'Loved the creativity and fun in the game design. The mechanics were smooth and engaging, making it a joy to play through the levels.',
     }
   ];
 }
