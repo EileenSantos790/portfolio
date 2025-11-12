@@ -21,6 +21,14 @@ body {
     background-color: $bg_projects;
 }
 
+/* Center and limit main content to 1440px on wide screens */
+app-root {
+  display: block;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+}
+
 h1 {
     font-size: 88px;
     color: $secondary_color;

@@ -18,14 +18,16 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100%;
+    width: 100vw;
     height: 104px;
-    padding-left: 5%;
-    padding-right: 5%;
-    box-sizing: border-box;position: sticky;
+    box-sizing: border-box;
+    position: sticky;
     top: 0;
-    width: 100%;
     z-index: 500;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding-left: calc(50vw - 50% + 5%);
+    padding-right: calc(50vw - 50% + 5%);
 }
 
 .nameLogoSmall {
@@ -162,5 +164,10 @@
 
   .navLine{
     display: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 5%;
+    padding-right: 5%;
   }
 }
