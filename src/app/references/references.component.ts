@@ -18,19 +18,19 @@ interface Reference {
 export class ReferencesComponent {
   references: Reference[] = [
     {
-      name: 'Tess Puschmann',
-      project: 'Join',
-      reference: 'A reliable team member who stays focused during busy project phases. Handles deadlines well and keeps an overview even when things get hectic. Brings structure and calmness to the team.',
+      name: 'The journey begins',
+      project: '2020 - 2022',
+      reference: 'I completed my general university entrance qualification and want to learn more about programming and UX design.',
     },
     {
-      name: 'Annabella Lopez',
-      project: 'Join',
-      reference: 'Shows good organizational skills and keeps projects on track. Works thoughtfully on design tasks and communicates clearly about progress and priorities.',
+      name: 'My first steps',
+      project: '2022 - 2024',
+      reference: 'I began studying UX and UI design to expand my knowledge and grow professionally.',
     },
     {
-      name: 'Sara Pohl',
-      project: 'El-Pollo-Loco',
-      reference: 'Loved the creativity and fun in the game design. The mechanics were smooth and engaging, making it a joy to play through the levels.',
+      name: 'Following the objective',
+      project: '2024 - Present',
+      reference: 'I have a strong interest in deepening my knowledge in front-end development and am currently completing additional training at the Developer Academy alongside my studies.',
     }
   ];
 }

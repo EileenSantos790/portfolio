@@ -14,10 +14,8 @@ section {
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  // width: 100%;
-  margin: 0 24px;
   margin-bottom: 89px;
-
+  margin-inline: 10%;
   @media screen and (max-width: 350px) {
     margin: 0 12px;
   }
@@ -38,6 +36,34 @@ h2 {
   text-align: left;
   margin-bottom: 56px;
   font-family: "Josefin Sans", sans-serif;
+}
+
+/* Title line container keeps mobile stack by default */
+.title-line {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Wide screens: place headline and subtitle on one centered line with unified style */
+@media screen and (min-width: 1024px) {
+  .title-line {
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    gap: 12px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 56px;
+  }
+
+  .title-line h2,
+  .title-line .subtitle {
+    margin: 0;
+    font-size: 32px;
+    color: $lightBlue;
+    font-family: "Josefin Sans", sans-serif;
+  }
 }
 
 .references {
@@ -78,6 +104,14 @@ h2 {
   scrollbar-width: thin;
 }
 
+/* Center the references container on wide screens */
+@media screen and (min-width: 1024px) {
+  .references {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .reference {
   min-width: 400px;
   max-width: 400px;
@@ -99,12 +133,8 @@ h2 {
     background-image: url("/assets/references-section/eclipse_reference_hover.svg");
   }
 
-  @media (max-width: 1200px) {
-    height: 350px;
-  }
-
-  @media (max-width: 1200px) {
-    height: 290px;
+  @media (max-width: 1024px) {
+    height: 370px;
   }
 
   .reference_text {
@@ -114,32 +144,36 @@ h2 {
     align-items: center;
 
     h3 {
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 500;
       margin: 0;
+      color: $fontLightPurple;
 
-      @media (max-width: 1300px) {
+      @media (max-width: 1024px) {
         font-size: 24px;
-      }
-
-      @media (max-width: 1100px) {
-        color: $fontLightPurple;
       }
     }
 
     .reference_project,
-    .reference_project > span {
+    .reference_project>span {
       font-size: 18px;
       text-decoration: none;
       font-family: "Josefin Sans", sans-serif;
       text-align: center;
-      color: $fontLightPurple;
 
-      @media (max-width: 1100px) {
+      @media (max-width: 1024px) {
         span {
           font-weight: 700;
         }
       }
+    }
+
+    .reference_project {
+      color: $fontLightPurple;
+    }
+
+    .reference_project>span {
+      color: $lightBlue;
     }
 
     span {
@@ -154,7 +188,7 @@ h2 {
       line-height: 1.6;
       margin: 8px 0;
 
-      @media (max-width: 1100px) {
+      @media (max-width: 1024px) {
         overflow-y: auto;
         padding-right: 12px;
 
@@ -182,9 +216,18 @@ h2 {
       }
     }
 
-    @media (max-width: 1100px) {
-      height: 100%;
+    @media (max-width: 1024px) {
       gap: 8px;
+      align-items: flex-start;
+
+      /* ensure text is left-aligned on small screens */
+      .reference_project,
+      .text,
+      a,
+      h3 {
+        text-align: left;
+        padding-left: 30px;
+      }
     }
   }
 }
