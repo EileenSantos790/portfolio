@@ -385,19 +385,24 @@ nav {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px){
   h2 {
-    font-size: 24px;
+    font-size: 32px;
   }
 
-  h3 {
-    font-size: 24px;
+  .project-main-card{
+    margin-top: 32px;
+    margin-bottom: 80px;
   }
 
   nav .button {
     font-size: 18px;
     padding: 16px 8px;
     border-radius: 20px 20px 0 0;
+  }
+
+  h3 {
+    font-size: 24px;
   }
 
   .right-section {

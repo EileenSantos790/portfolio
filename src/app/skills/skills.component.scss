@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-inline: 30%;
+    padding-inline: 23px;
     gap: 80px;
     margin-top: 104px;
     margin-bottom: 104px;
@@ -130,7 +130,8 @@
 
 @media (max-width: 900px) {
     .skillsContainer {
-        padding-inline: 10%;
+        margin-top: 80px;
+        margin-bottom: 80px;
         gap: 40px;
 
         h2 {
@@ -144,8 +145,6 @@
     }
 
     .learningSection {
-        width: 320px;
-        height: 320px;
 
         h3 {
             font-size: 20px;
@@ -161,10 +160,6 @@
         span {
             display: none;
         }
-    }
-
-    .skillsContainer {
-        margin-block: 80px;
     }
 }
 

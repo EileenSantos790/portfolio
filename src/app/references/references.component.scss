@@ -14,11 +14,7 @@ section {
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  margin-bottom: 89px;
-  margin-inline: 10%;
-  @media screen and (max-width: 350px) {
-    margin: 0 12px;
-  }
+  margin-inline: 23px;
 }
 
 h2 {
@@ -74,7 +70,6 @@ h2 {
   width: 100%;
   max-width: 1440px;
   overflow-x: auto;
-  padding-bottom: 24px;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
 

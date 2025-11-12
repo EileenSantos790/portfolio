@@ -92,8 +92,8 @@ $secondary_color: #F8F5EC;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin-inline: 20px;
-  width: 80%;
+  margin-inline: 23px;
+  width: webkit-fill-available;
 }
 
 /* Hero Image Section */
@@ -158,7 +158,6 @@ $secondary_color: #F8F5EC;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 56px;
 
   .logoHeroImg {
     width: 56px;
@@ -361,7 +360,8 @@ $secondary_color: #F8F5EC;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
+    width: -webkit-fill-available;
+    margin-inline: 23px;
   }
 
   .sectionContainer {
