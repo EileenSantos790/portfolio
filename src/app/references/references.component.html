@@ -1,18 +1,18 @@
 <section>
   <div class="title-line">
-    <h2 class="headline">Need a teamplayer?</h2>
-    <span class="subtitle">Here is what my motivation is about:</span>
+  <h2 class="headline">{{ currentLang === 'DE' ? 'Teamplayer gesucht?' : 'Need a teamplayer?' }}</h2>
+  <span class="subtitle">{{ currentLang === 'DE' ? 'Das ist meine Motivation:' : 'Here is what my motivation is about:' }}</span>
   </div>
   <div class="references">
     @for (reference of references; track $index) {
       <div class="reference">
         <div class="reference_text">
-          <h3>{{ reference.name }}</h3>
+          <h3>{{ getReferenceText(reference, 'name') }}</h3>
           <p class="reference_project">
-            Period: <span>{{ reference.project }}</span>
+            {{ currentLang === 'DE' ? 'Zeitraum:' : 'Period:' }} <span>{{ reference.project }}</span>
           </p>
           <p class="text">
-            "{{ reference.reference }}"
+            "{{ getReferenceText(reference, 'reference') }}"
           </p>
           @if(reference.link) {
             <a [href]="reference.link" target="_blank" rel="noopener noreferrer">

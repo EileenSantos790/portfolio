@@ -22,7 +22,7 @@
                 <span>{{ translations.projects.duration }}: {{ projects[activeIndex].duration }}</span>
               </div>
             </div>
-            <p>{{ projects[activeIndex].about }}</p>
+            <p>{{ getProjectText(projects[activeIndex], 'about') }}</p>
           </div>
 
           <div class="task">
@@ -34,7 +34,7 @@
                 <h3>{{ translations.projects.howOrganized }}</h3>
               </div>
             </div>
-            <p>{{ projects[activeIndex].process }}</p>
+            <p>{{ getProjectText(projects[activeIndex], 'process') }}</p>
           </div>
 
           <div class="task">
@@ -46,7 +46,7 @@
                 <h3>{{ translations.projects.groupExperience }}</h3>
               </div>
             </div>
-            <p>{{ projects[activeIndex].experience }}</p>
+            <p>{{ getProjectText(projects[activeIndex], 'experience') }}</p>
           </div>
         </div>
 

@@ -35,6 +35,13 @@ export interface Translations {
     technologies: string;
     liveTest: string;
     github: string;
+    description: string;
+    noProjects: string;
+  };
+  references: {
+    title: string;
+    description: string;
+    noReferences: string;
   };
   contact: {
     title: string;
@@ -124,7 +131,14 @@ export class TranslationService {
         groupExperience: 'My group work experience',
         technologies: 'Technologies',
         liveTest: 'Live Test',
-        github: 'GitHub'
+        github: 'GitHub',
+        description: 'Here you can find some of my main projects, including details about my role, technologies used, and what I learned from each experience.',
+        noProjects: 'No projects to display.'
+      },
+      references: {
+        title: 'References',
+        description: 'Here are some references and testimonials from people I have worked with.',
+        noReferences: 'No references to display.'
       },
       contact: {
         title: 'Contact me',
@@ -203,10 +217,17 @@ export class TranslationService {
         aboutProject: 'Über das Projekt',
         duration: 'Dauer',
         howOrganized: 'Wie ich meinen Arbeitsprozess organisiert habe',
-        groupExperience: 'Meine Gruppenarbeitserfahrung',
+        groupExperience: 'Meine Erfahrung in der Gruppenarbeit',
         technologies: 'Technologien',
-        liveTest: 'Live-Test',
-        github: 'GitHub'
+        liveTest: 'Live-Demo',
+        github: 'GitHub',
+        description: 'Hier findest du einige meiner wichtigsten Projekte, einschließlich Details zu meiner Rolle, den verwendeten Technologien und meinen Lernerfahrungen.',
+        noProjects: 'Keine Projekte zum Anzeigen.'
+      },
+      references: {
+        title: 'Referenzen',
+        description: 'Hier findest du Referenzen und Erfahrungsberichte von Menschen, mit denen ich zusammengearbeitet habe.',
+        noReferences: 'Keine Referenzen zum Anzeigen.'
       },
       contact: {
         title: 'Kontaktieren Sie mich',

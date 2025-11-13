@@ -5,9 +5,12 @@ import { TranslationService, Translations } from '../services/translation.servic
 interface Project {
   name: string;
   duration: string;
-  about: string;
-  process: string;
-  experience: string;
+  aboutEN: string;
+  aboutDE: string;
+  processEN: string;
+  processDE: string;
+  experienceEN: string;
+  experienceDE: string;
   image: string;
   technologies: string[];
   live: string;
@@ -27,9 +30,12 @@ export class ProjectsComponent {
     {
       name: 'Join',
       duration: '7 weeks',
-      about: 'A task manager inspired by the Kanban method. Easily create, organize, and move tasks with drag and drop, and assign users and categories seamlessly.',
-      process: 'We were a team of three, and I focused on everything related to creating contacts and linking them to tasks. We supported each other throughout the project, which made working together a lot of fun. We built the app using JavaScript, HTML, CSS, and Google Firebase.',
-      experience: 'We kept our project organized with a Trello Kanban board, splitting tasks and tracking To-Dos as a team. To keep the code clean and maintainable, we built reusable components, used clear naming everywhere, and made sure everything was well-documented.',
+      aboutEN: 'A task manager inspired by the Kanban method. Easily create, organize, and move tasks with drag and drop, and assign users and categories seamlessly.',
+      aboutDE: 'Ein Aufgabenmanager, inspiriert von der Kanban-Methode. Aufgaben können einfach erstellt, organisiert und per Drag-and-Drop verschoben werden. Nutzer und Kategorien lassen sich nahtlos zuweisen.',
+      processEN: 'We were a team of three, and I focused on everything related to creating contacts and linking them to tasks. We supported each other throughout the project, which made working together a lot of fun. We built the app using JavaScript, HTML, CSS, and Google Firebase.',
+      processDE: 'Wir waren ein Team von drei Personen, und ich habe mich auf alles konzentriert, was mit der Erstellung von Kontakten und deren Verknüpfung mit Aufgaben zu tun hatte. Wir haben uns während des Projekts gegenseitig unterstützt, was die Zusammenarbeit sehr angenehm gemacht hat. Die App wurde mit JavaScript, HTML, CSS und Google Firebase entwickelt.',
+      experienceEN: 'We kept our project organized with a Trello Kanban board, splitting tasks and tracking To-Dos as a team. To keep the code clean and maintainable, we built reusable components, used clear naming everywhere, and made sure everything was well-documented.',
+      experienceDE: 'Wir haben unser Projekt mit einem Trello-Kanban-Board organisiert, Aufgaben aufgeteilt und To-Dos als Team verfolgt. Um den Code sauber und wartbar zu halten, haben wir wiederverwendbare Komponenten gebaut, überall klare Bezeichnungen verwendet und alles gut dokumentiert.',
       image: '/assets/projects-section/join.png',
       technologies: ['JavaScript', 'HTML', 'CSS', 'Firebase'],
       live: 'https://eileen-vieira-dos-santos.developerakademie.net/Join',
@@ -38,9 +44,12 @@ export class ProjectsComponent {
     {
       name: 'El Pollo Loco',
       duration: '3 weeks',
-      about: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
-      process: 'I developed this game completely on my own, focusing on clean, modular JavaScript code. I broke the project down into reusable classes and documented everything thoroughly to keep it maintainable.',
-      experience: 'Solo project where I handled everything from game logic to UI. Built entirely with JavaScript, HTML5 Canvas, and CSS.',
+      aboutEN: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
+      aboutDE: 'Jump-and-Run-Spiel mit objektorientiertem Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen.',
+      processEN: 'I developed this game completely on my own, focusing on clean, modular JavaScript code. I broke the project down into reusable classes and documented everything thoroughly to keep it maintainable.',
+      processDE: 'Ich habe dieses Spiel komplett eigenständig entwickelt und dabei Wert auf sauberen, modularen JavaScript-Code gelegt. Das Projekt wurde in wiederverwendbare Klassen unterteilt und umfassend dokumentiert, um die Wartbarkeit zu gewährleisten.',
+      experienceEN: 'Solo project where I handled everything from game logic to UI. Built entirely with JavaScript, HTML5 Canvas, and CSS.',
+      experienceDE: 'Ein Einzelprojekt, bei dem ich alles von der Spiellogik bis zur Benutzeroberfläche übernommen habe. Komplett mit JavaScript, HTML5 Canvas und CSS umgesetzt.',
       image: '/assets/projects-section/Pollo_Loco.png',
       technologies: ['JavaScript', 'HTML', 'CSS'],
       live: 'https://eileen-vieira-dos-santos.developerakademie.net/Pollo_Loco',
@@ -50,12 +59,20 @@ export class ProjectsComponent {
 
   activeIndex = 0;
 
+  currentLang: string;
   constructor(private translationService: TranslationService) {
     this.translations = this.translationService.getTranslations();
-    
-    this.translationService.getCurrentLanguage().subscribe(() => {
+    this.currentLang = this.translationService.getCurrentLanguageValue();
+    this.translationService.getCurrentLanguage().subscribe((lang) => {
       this.translations = this.translationService.getTranslations();
+      this.currentLang = lang;
     });
+  }
+  getProjectText(project: Project, field: 'about' | 'process' | 'experience'): string {
+    if (this.currentLang === 'DE') {
+      return project[`${field}DE`];
+    }
+    return project[`${field}EN`];
   }
 
   setActive(index: number) {

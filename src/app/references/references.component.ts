@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from '../services/translation.service';
 
 interface Reference {
-  name: string;
+  nameEN: string;
+  nameDE: string;
   project: string;
-  reference: string;
+  referenceEN: string;
+  referenceDE: string;
   link?: string;
 }
 
@@ -18,19 +21,39 @@ interface Reference {
 export class ReferencesComponent {
   references: Reference[] = [
     {
-      name: 'The journey begins',
+      nameEN: 'The journey begins',
+      nameDE: 'Der Weg beginnt',
       project: '2020 - 2022',
-      reference: 'I completed my general university entrance qualification and want to learn more about programming and UX design.',
+      referenceEN: 'I completed my general university entrance qualification and want to learn more about programming and UX design.',
+      referenceDE: 'Ich habe mein allgemeines Abitur abgeschlossen und möchte mehr über Programmierung und UX-Design lernen.',
     },
     {
-      name: 'My first steps',
+      nameEN: 'My first steps',
+      nameDE: 'Meine ersten Schritte',
       project: '2022 - 2024',
-      reference: 'I began studying UX and UI design to expand my knowledge and grow professionally.',
+      referenceEN: 'I began studying UX and UI design to expand my knowledge and grow professionally.',
+      referenceDE: 'Ich habe begonnen, UX- und UI-Design zu studieren, um mein Wissen zu erweitern und mich beruflich weiterzuentwickeln.',
     },
     {
-      name: 'Following the objective',
+      nameEN: 'Following the objective',
+      nameDE: 'Dem Ziel folgend',
       project: '2024 - Present',
-      reference: 'I have a strong interest in deepening my knowledge in front-end development and am currently completing additional training at the Developer Academy alongside my studies.',
+      referenceEN: 'I have a strong interest in deepening my knowledge in front-end development and am currently completing additional training at the Developer Academy alongside my studies.',
+      referenceDE: 'Ich habe großes Interesse daran, mein Wissen in der Frontend-Entwicklung zu vertiefen und absolviere derzeit zusätzliche Schulungen an der Developer Akademie parallel zu meinem Studium.',
     }
   ];
+  currentLang: string = 'EN';
+  constructor(private translationService: TranslationService) {
+    this.currentLang = this.translationService.getCurrentLanguageValue();
+    this.translationService.getCurrentLanguage().subscribe((lang) => {
+      this.currentLang = lang;
+    });
+  }
+
+  getReferenceText(ref: Reference, field: 'name' | 'reference'): string {
+    if (this.currentLang === 'DE') {
+      return ref[`${field}DE`];
+    }
+    return ref[`${field}EN`];
+  }
 }
