@@ -1,50 +1,78 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { MainContentComponent } from './main-content/main-content.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
+/**
+ * Root application component that sets up global behaviors and layout.
+ */
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MainContentComponent, FooterComponent],
+  imports: [CommonModule, RouterOutlet, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit {
   title = '';
 
+  /**  
+   * Initializes the app component and sets up scroll restoration and page show handling.
+   */
   ngOnInit() {
-    // Ensure browser doesn't restore previous scroll position automatically
+    this.setupScrollRestoration();
+    this.clearHashAndGoTop();
+    this.setupPageShowListener();
+    this.setupBeforeUnloadListener();
+  }
+
+  /**
+   * Configures manual scroll restoration for the browser.
+   */
+  private setupScrollRestoration() {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
+  }
 
-    const clearHashAndGoTop = () => {
-      if (window.location.hash) {
-        history.replaceState(null, '', window.location.pathname + window.location.search);
-      }
-      const original = document.documentElement.style.scrollBehavior;
-      document.documentElement.style.scrollBehavior = 'auto';
-      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-      // Extra nudge after paint to defeat late layout shifts
-      setTimeout(() => window.scrollTo(0, 0), 50);
-      setTimeout(() => {
-        document.documentElement.style.scrollBehavior = original || 'smooth';
-      }, 150);
-    };
+  /**
+   * Clears URL hash and scrolls to top with auto behavior.
+   */
+  private clearHashAndGoTop() {
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+    this.scrollToTopWithoutAnimation();
+  }
 
-    // Run on initial load
-    clearHashAndGoTop();
+  /**
+   * Scrolls to top without smooth animation.
+   */
+  private scrollToTopWithoutAnimation() {
+    const original = document.documentElement.style.scrollBehavior;
+    document.documentElement.style.scrollBehavior = 'auto';
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    setTimeout(() => window.scrollTo(0, 0), 50);
+    setTimeout(() => {
+      document.documentElement.style.scrollBehavior = original || 'smooth';
+    }, 150);
+  }
 
-    // Ensure clean state when restoring from bfcache
+  /**
+   * Sets up listener for pageshow event to handle bfcache.
+   */
+  private setupPageShowListener() {
     window.addEventListener('pageshow', (e) => {
       if ((e as PageTransitionEvent).persisted) {
-        clearHashAndGoTop();
+        this.clearHashAndGoTop();
       }
     });
+  }
 
-    // On hard reload navigation, make sure we start at top
+  /**
+   * Sets up listener for beforeunload to scroll to top.
+   */
+  private setupBeforeUnloadListener() {
     window.addEventListener('beforeunload', () => {
       window.scrollTo(0, 0);
     });

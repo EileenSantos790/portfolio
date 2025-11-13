@@ -11,6 +11,9 @@ interface Reference {
   link?: string;
 }
 
+/**
+ * References component to display user references and testimonials.
+ */
 @Component({
   selector: 'app-references',
   standalone: true,
@@ -19,6 +22,7 @@ interface Reference {
   styleUrl: './references.component.scss'
 })
 export class ReferencesComponent {
+  /** List of user references and testimonials. */
   references: Reference[] = [
     {
       nameEN: 'The journey begins',
@@ -43,6 +47,10 @@ export class ReferencesComponent {
     }
   ];
   currentLang: string = 'EN';
+
+  /**  
+   * Initializes the references component and subscribes to language changes.
+   */
   constructor(private translationService: TranslationService) {
     this.currentLang = this.translationService.getCurrentLanguageValue();
     this.translationService.getCurrentLanguage().subscribe((lang) => {
@@ -50,6 +58,12 @@ export class ReferencesComponent {
     });
   }
 
+  /**
+   * Gets the localized text for a reference field.
+   * @param ref The reference object.
+   * @param field The field name.
+   * @returns Localized text.
+   */
   getReferenceText(ref: Reference, field: 'name' | 'reference'): string {
     if (this.currentLang === 'DE') {
       return ref[`${field}DE`];

@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import Typed from 'typed.js';
 import { TranslationService, Translations } from '../services/translation.service';
 
+/**
+ * About component displaying location and work preferences with animated text.
+ */
 @Component({
   selector: 'app-about',
   standalone: true,
@@ -19,6 +22,9 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
   private typed?: Typed;
   private previousIconIndex = 0;
 
+  /**  
+   * Initializes the about component and subscribes to language changes.
+   */
   constructor(private translationService: TranslationService) {
     this.translations = this.translationService.getTranslations();
     
@@ -28,17 +34,40 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
     });
   }
 
+  /**  
+   * Lifecycle hook called after the view has been initialized.
+   */
   ngAfterViewInit(): void {
     this.initTyped();
   }
 
+  /**
+   * Initializes the Typed.js instance with localized strings.
+   */
   private initTyped(): void {
+    const strings = this.getLocalizedStrings();
+    const options = this.getTypedOptions(strings);
+    this.typed = new Typed(this.typedElement.nativeElement, options);
+  }
+
+  /**
+   * Gets localized strings based on current language.
+   * @returns Array of localized strings.
+   */
+  private getLocalizedStrings(): string[] {
     const lang = this.translationService.getCurrentLanguageValue();
-    const strings = lang === 'EN' 
+    return lang === 'EN' 
       ? [' located in Hannover..', ' open to work remote...']
       : [' in Hannover ansässig..', ' offen für Remote-Arbeit...'];
+  }
 
-    const options = {
+  /**
+   * Gets the Typed.js configuration options.
+   * @param strings Array of strings to type.
+   * @returns Typed.js options object.
+   */
+  private getTypedOptions(strings: string[]) {
+    return {
       strings,
       typeSpeed: 50,
       backSpeed: 30,
@@ -48,14 +77,13 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
       showCursor: true,
       cursorChar: '|',
       contentType: 'html',
-      preStringTyped: (arrayPos: number) => {
-        this.changeIcon(arrayPos);
-      }
+      preStringTyped: (arrayPos: number) => { this.changeIcon(arrayPos); }
     };
-    
-    this.typed = new Typed(this.typedElement.nativeElement, options);
   }
 
+  /**
+   * Restarts the Typed.js instance with new configuration.
+   */
   private restartTyped(): void {
     if (this.typed) {
       this.typed.destroy();
@@ -65,17 +93,34 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
     }
   }
 
+  /**
+   * Changes the icon with fade animation.
+   * @param index Icon index to display.
+   */
   changeIcon(index: number): void {
-    const newIcon = index === 0 
+    const newIcon = this.getIconPath(index);
+    if (this.currentIcon === newIcon) return;
+    this.fadeOutAndChangeIcon(newIcon, index);
+  }
+
+  /**
+   * Gets the icon path based on index.
+   * @param index Icon index.
+   * @returns Icon path.
+   */
+  private getIconPath(index: number): string {
+    return index === 0 
       ? '../../assets/Why_me_Section/Location.svg' 
       : '../../assets/Why_me_Section/Remote.svg';
-    
-    if (this.currentIcon === newIcon) {
-      return;
-    }
-    
+  }
+
+  /**
+   * Fades out current icon and changes to new one.
+   * @param newIcon New icon path.
+   * @param index New icon index.
+   */
+  private fadeOutAndChangeIcon(newIcon: string, index: number): void {
     this.fadeClass = 'fade-out';
-    
     setTimeout(() => {
       this.currentIcon = newIcon;
       this.previousIconIndex = index;
@@ -83,6 +128,9 @@ export class AboutComponent implements AfterViewInit, OnDestroy {
     }, 200);
   }
 
+  /**  
+   * Lifecycle hook called when the component is destroyed.
+   */
   ngOnDestroy(): void {
     if (this.typed) {
       this.typed.destroy();

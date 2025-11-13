@@ -17,6 +17,9 @@ interface Project {
   github: string;
 }
 
+/**
+ * Projects component displaying a list of projects with localization support.
+ */
 @Component({
   selector: 'app-projects',
   standalone: true,
@@ -58,8 +61,11 @@ export class ProjectsComponent {
   ];
 
   activeIndex = 0;
-
   currentLang: string;
+
+  /**  
+   * Initializes the projects component and subscribes to language changes.
+   */
   constructor(private translationService: TranslationService) {
     this.translations = this.translationService.getTranslations();
     this.currentLang = this.translationService.getCurrentLanguageValue();
@@ -68,6 +74,13 @@ export class ProjectsComponent {
       this.currentLang = lang;
     });
   }
+
+  /**
+   * Gets the localized text for a project field.
+   * @param project The project object.
+   * @param field The field name.
+   * @returns Localized text.
+   */
   getProjectText(project: Project, field: 'about' | 'process' | 'experience'): string {
     if (this.currentLang === 'DE') {
       return project[`${field}DE`];
@@ -75,6 +88,10 @@ export class ProjectsComponent {
     return project[`${field}EN`];
   }
 
+  /**
+   * Sets the active project index.
+   * @param index The project index to set as active.
+   */
   setActive(index: number) {
     this.activeIndex = index;
   }
