@@ -52,6 +52,7 @@ export class ContactComponent {
   submitted = false;
   isCheckboxHovered = false;
   arrowIsHovered = false;
+  arrowMobileIsHovered = false;
   mailIsHovered = false;
   phoneIsHovered = false;
   showToast = false;

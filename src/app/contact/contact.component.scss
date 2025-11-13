@@ -76,6 +76,20 @@ span {
   color: $fontLightPurple;
 }
 
+:host ::ng-deep .custom-checkbox p a {
+  color: $lightBlue !important;
+  text-decoration: none;
+  transition: 0.2s color ease-in-out;
+
+  &:visited {
+    color: $lightBlue !important;
+  }
+
+  &:hover {
+    color: $fontLightPurple !important;
+  }
+}
+
 .contact-me-text {
   display: flex;
   justify-content: center;
@@ -231,16 +245,6 @@ select:-webkit-autofill:focus {
     position: relative;
     top: 0;
     left: 0;
-
-    a {
-      color: $lightBlue;
-      text-decoration: none;
-      transition: 0.2s color ease-in-out;
-
-      &:hover {
-        color: $fontLightPurple;
-      }
-    }
   }
 
   .error {
@@ -273,13 +277,31 @@ button {
   }
 }
 
-.custom-checkbox img {
-  cursor: pointer;
-  width: 28px;
-  height: 28px;
-  margin-right: 12px;
-  object-fit: contain;
-  transition: opacity 0.2s ease-in-out;
+.custom-checkbox {
+  img {
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    margin-right: 12px;
+    object-fit: contain;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  p {
+    a {
+      color: $lightBlue !important;
+      text-decoration: none;
+      transition: 0.2s color ease-in-out;
+
+      &:visited {
+        color: $lightBlue !important;
+      }
+
+      &:hover {
+        color: $fontLightPurple !important;
+      }
+    }
+  }
 }
 
 .input-error {
@@ -294,30 +316,19 @@ button {
 }
 
 .arrow-up-mobile {
-  position: relative;
-  display: inline-block;
-  width: 30px;
-  height: 30px;
+  display: none;
+  transition: 0.2s all ease-in-out;
+  cursor: pointer;
+  margin-top: 80px;
+  margin-bottom: 104px;
 
-  .icon {
-    position: absolute;
-    top: -134px;
-    left: 0;
-    transition: opacity 0.125s ease;
-    width: 30px;
-    height: 60px;
-  }
-
-  .hover {
-    opacity: 0;
-  }
-
-  &:hover .hover {
+  &:hover {
     opacity: 1;
   }
 
-  &:hover .default {
-    opacity: 0;
+  img {
+    width: 30px;
+    height: 60px;
   }
 }
 
@@ -463,6 +474,22 @@ button {
     margin-bottom: 76px;
   }
 
+}
+
+@media (max-width: 1024px) {
+  .arrow-up {
+    display: none !important;
+  }
+
+  .arrow-up-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .button-wrapper {
+    margin-bottom: 0;
+  }
 }
 
 @media (max-width: 1023px) {

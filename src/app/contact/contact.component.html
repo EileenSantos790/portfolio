@@ -137,6 +137,12 @@
         </button>
       </div>
     </form>
+
+    <a class="arrow-up-mobile" (mouseover)="arrowMobileIsHovered = true" (mouseout)="arrowMobileIsHovered = false" href="#">
+      <img 
+        [src]="arrowMobileIsHovered ? '/assets/Why_me_Section/Arrow_up_hover.svg' : '/assets/Why_me_Section/Arrow_up.svg'" 
+        alt="Arrow up">
+    </a>
   </div>
 
   <div class="toast" *ngIf="showToast">
