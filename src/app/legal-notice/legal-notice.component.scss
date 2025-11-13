@@ -1,7 +1,8 @@
 /* Container optional */
 .legal-notice {
     line-height: 1.6;
-    margin-block: 65px;
+    margin-bottom: 32px;
+    margin-top: 18px;
     margin-inline: 100px;
 }
 
@@ -55,7 +56,6 @@
     align-items: center;
     cursor: pointer;
     transition: transform 0.3s ease;
-    margin-top: 7px;
 
     img {
         width: 34px;
@@ -196,7 +196,7 @@
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        padding: 20px 23px;
+        padding: 30px 36px;
         box-sizing: border-box;
     }
 
