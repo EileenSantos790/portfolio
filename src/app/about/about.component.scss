@@ -115,10 +115,6 @@
     .spaceAnimation {
         font-size: 18px;
     }
-
-    .textAnimationContainer {
-        justify-content: center;
-    }
 }
 
 @media (max-width: 900px) {
@@ -139,6 +135,12 @@
 
     .textAnimationContainer {
         width: 100%;
+        gap: 5px;
+
+        img {
+            width: 32px;
+            height: 32px;
+        }
     }
 
     h2 {
