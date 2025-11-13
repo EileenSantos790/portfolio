@@ -1,14 +1,19 @@
-$mainBgColor: #262E34;
-$fontLightPurple: #F8F5EC;
-$lightBlue: #89BCD9;
-$BtnHoverBg: #F8F5EC1F;
-$projectBg: #89BCD912;
-$error: #E44C36;
+@import '../../styles.scss';
+
+@mixin flex-center($direction: row, $gap: null) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+  @if $gap != null {
+    gap: $gap;
+  }
+}
 
 h2 {
   font-size: 54px;
   font-weight: 400;
-  color: $lightBlue;
+  color: $primary_color;
 }
 
 section {
@@ -53,7 +58,7 @@ section {
   h2 {
     font-family: 'Anta';
     font-size: 54px;
-    color: $lightBlue;
+    color: $primary_color;
   }
 }
 
@@ -66,27 +71,27 @@ section {
   p {
     font-family: 'Josefin Sans';
     font-size: 18px;
-    color: $fontLightPurple;
+    color: $secondary_color;
   }
 }
 
 span {
   font-family: 'Josefin Sans';
   font-size: 20px;
-  color: $fontLightPurple;
+  color: $secondary_color;
 }
 
 :host ::ng-deep .custom-checkbox p a {
-  color: $lightBlue !important;
+  color: $primary_color !important;
   text-decoration: none;
   transition: 0.2s color ease-in-out;
 
   &:visited {
-    color: $lightBlue !important;
+    color: $primary_color !important;
   }
 
   &:hover {
-    color: $fontLightPurple !important;
+    color: $secondary_color !important;
   }
 }
 
@@ -115,7 +120,7 @@ span {
   span {
     font-family: 'Josefin Sans';
     font-size: 20px;
-    color: $fontLightPurple;
+    color: $secondary_color;
   }
 
   img {
@@ -123,10 +128,10 @@ span {
   }
 
   &:hover {
-    color: $lightBlue;
+    color: $primary_color;
 
     span {
-      color: $lightBlue;
+      color: $primary_color;
     }
   }
 
@@ -141,7 +146,7 @@ span {
     cursor: default;
 
     span {
-      color: $lightBlue;
+      color: $primary_color;
     }
   }
 
@@ -178,33 +183,33 @@ form {
     background-color: transparent;
     padding: 0 4px;
     font-size: 16px;
-    color: $lightBlue;
+    color: $primary_color;
     font-family: 'Josefin Sans';
   }
 
   input,
   textarea {
     width: 100%;
-    background-color: $projectBg;
+    background-color: #89BCD912;
     padding: 20px;
-    border: 1px solid $lightBlue;
+    border: 1px solid $primary_color;
     border-radius: 30px;
     font-size: 18px;
     font-family: 'Josefin Sans';
     resize: none;
-    color: $fontLightPurple;
+    color: $secondary_color;
     z-index: 990 !important;
 
     &:focus {
       outline: none;
-      border-color: $lightBlue;
-      background-color: $BtnHoverBg;
+      border-color: $primary_color;
+      background-color: #F8F5EC1F;
     }
   }
 
   .error {
     font-family: 'Josefin Sans';
-    color: $error;
+    color: $error_color;
     font-size: 12px;
     margin-top: 4px;
   }
@@ -214,7 +219,7 @@ input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #2D383F inset !important;
-  -webkit-text-fill-color: $fontLightPurple !important;
+  -webkit-text-fill-color: $secondary_color !important;
 }
 
 input:-webkit-autofill:focus,
@@ -241,7 +246,7 @@ select:-webkit-autofill:focus {
     align-items: center;
     font-family: 'Josefin Sans';
     font-size: 16px;
-    color: $fontLightPurple;
+    color: $secondary_color;
     position: relative;
     top: 0;
     left: 0;
@@ -251,7 +256,7 @@ select:-webkit-autofill:focus {
     position: absolute;
     margin-left: 56px;
     font-size: 16px;
-    color: $error;
+    color: $error_color;
     bottom: -40px;
   }
 }
@@ -260,20 +265,20 @@ button {
   cursor: pointer;
   font-size: 18px;
   font-family: 'Josefin Sans';
-  color: $fontLightPurple;
+  color: $secondary_color;
   border-radius: 30px;
-  background-color: $mainBgColor;
-  border: 1px solid $lightBlue;
+  background-color: $bg_projects;
+  border: 1px solid $primary_color;
   padding: 13px 30px;
   transition: 0.2s all ease-in-out;
 
   &:hover {
-    background-color: $projectBg;
+    background-color: #89BCD912;
   }
 
   &.disabled {
     opacity: 0.4;
-    border: 1px solid #F8F5EC;
+    border: 1px solid $secondary_color;
   }
 }
 
@@ -289,23 +294,23 @@ button {
 
   p {
     a {
-      color: $lightBlue !important;
+      color: $primary_color !important;
       text-decoration: none;
       transition: 0.2s color ease-in-out;
 
       &:visited {
-        color: $lightBlue !important;
+        color: $primary_color !important;
       }
 
       &:hover {
-        color: $fontLightPurple !important;
+        color: $secondary_color !important;
       }
     }
   }
 }
 
 .input-error {
-  color: $error;
+  color: $error_color;
 }
 
 .button-wrapper {
@@ -338,15 +343,15 @@ button {
   left: 50%;
   transform: translateX(-50%);
   animation: toastFadeInOut 3s ease-in-out forwards;
-  background-color: $mainBgColor;
-  color: $fontLightPurple;
+  background-color: $bg_projects;
+  color: $secondary_color;
   font-family: 'Josefin Sans';
   font-size: 14px;
   padding: 16px 24px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   z-index: 9999;
-  border: 1px solid $lightBlue;
+  border: 1px solid $primary_color;
 
   img {
     filter: invert(79%) sepia(74%) saturate(335%) hue-rotate(40deg) brightness(93%) contrast(91%);
@@ -447,7 +452,7 @@ button {
       display: block;
       margin: 32px 0;
       font-size: 20px;
-      color: #89BCD9;
+      color: $primary_color;
       text-align: center;
       font-family: 'Josefin Sans';
     }
@@ -513,7 +518,7 @@ button {
   }
 
   .border-error {
-    border: 1px solid $error !important;
+    border: 1px solid $error_color !important;
   }
 }
 
@@ -528,7 +533,7 @@ button {
   }
 
   .border-error {
-    border: 1px solid $error !important;
+    border: 1px solid $error_color !important;
   }
 }
 

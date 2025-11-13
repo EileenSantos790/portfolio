@@ -1,12 +1,7 @@
-$mainBgColor: #262E34;
-$fontLightPurple: #F8F5EC;
-$lightBlue: #89BCD9;
-$BtnHoverBg: #F8F5EC1F;
-$projectBg: #89BCD912;
-$error: #E44C36;
+@import '../../../styles.scss';
 
 .footer-section {
-  background-color: $lightBlue;
+  background-color: $primary_color;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
@@ -24,16 +19,16 @@ footer {
 
   a {
     text-decoration: none;
-    color: $mainBgColor;
+    color: $bg_projects;
     transition: 0.2s all ease-in-out;
 
     &:hover {
-      color: $fontLightPurple;
+      color: $secondary_color;
     }
   }
 
   p {
-    color: $mainBgColor;
+    color: $bg_projects;
     font-size: 18px;
     margin: 0;
   }
@@ -93,22 +88,22 @@ footer {
   .nameLogo {
     font-family: 'Anta', sans-serif;
     font-size: 16px;
-    color: $fontLightPurple;
+    color: $secondary_color;
   }
 
   .specificationLogo {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 16px;
-    color: $mainBgColor;
+    color: $bg_projects;
     font-weight: 300;
   }
 }
 
 .logoHero:hover .nameLogo {
-  color: $fontLightPurple;
+  color: $secondary_color;
 }
 .logoHero:hover .specificationLogo {
-  color: $fontLightPurple;
+  color: $secondary_color;
 }
 
 @media (max-width: 740px) {

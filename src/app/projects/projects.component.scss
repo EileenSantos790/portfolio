@@ -1,17 +1,22 @@
-$mainBgColor: #262E34;
-$fontLightPurple: #F8F5EC;
-$lightBlue: #89BCD9;
-$BtnHoverBg: #F8F5EC1F;
+@import '../../styles.scss';
+
+@mixin flex-center($direction: row, $gap: null) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+  @if $gap != null {
+    gap: $gap;
+  }
+}
+
 $projectBg: #89BCD912;
 
 section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  @include flex-center(column);
   opacity: 1;
   transition: opacity 0.1s cubic-bezier(0.0, 0.4, 0.165, 1), transform 0.2s ease;
-  background-color: $mainBgColor;
+  background-color: $bg_projects;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
@@ -23,14 +28,12 @@ section {
 h2 {
   font-size: 60px;
   font-weight: 400;
-  color: $lightBlue;
+  color: $primary_color;
   font-family: 'Josefin Sans', sans-serif;
 }
 
 .project-main-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-center(column);
   width: 100%;
   max-width: 1440px;
   margin-top: 80px;
@@ -50,8 +53,8 @@ nav {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 30px;
     font-weight: 500;
-    color: $lightBlue;
-    background-color: $mainBgColor;
+    color: $primary_color;
+    background-color: $bg_projects;
     border: none;
     border-radius: 30px 30px 0 0;
     padding: 32px;
@@ -59,7 +62,7 @@ nav {
     transition: background-color 0.2s;
 
     &:hover {
-      color: $fontLightPurple;
+      color: $secondary_color;
     }
   }
 }
@@ -93,7 +96,7 @@ nav {
   flex-direction: column;
   gap: 32px;
   font-family: 'Josefin Sans', sans-serif;
-  color: $fontLightPurple;
+  color: $secondary_color;
 }
 
 .task {
@@ -131,7 +134,7 @@ nav {
 
       span {
         font-size: 18px;
-        color: $fontLightPurple;
+        color: $secondary_color;
       }
     }
   }
@@ -154,7 +157,7 @@ nav {
   .responsive-meta {
     display: none;
     width: 100%;
-    color: $fontLightPurple;
+    color: $secondary_color;
     font-family: 'Josefin Sans', sans-serif;
     padding: 28px 0 24px 0;
 
@@ -162,11 +165,11 @@ nav {
       font-size: 24px;
       font-weight: 400;
       margin: 0 0 12px 0;
-      color: $lightBlue;
+      color: $primary_color;
     }
 
     .label {
-      color: $fontLightPurple;
+      color: $secondary_color;
       font-size: 16px;
       margin-right: 8px;
     }
@@ -186,7 +189,7 @@ nav {
         margin: 0;
         padding: 0;
         font-size: 16px;
-        color: $fontLightPurple;
+        color: $secondary_color;
       }
     }
 
@@ -197,13 +200,10 @@ nav {
   }
 
   .tools {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    @include flex-center(column);
 
     p {
-      color: $fontLightPurple;
+      color: $secondary_color;
       font-size: 18px;
       margin-bottom: 12px;
     }
@@ -250,11 +250,11 @@ nav {
   a {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 18px;
-    color: $lightBlue;
-    background-color: $mainBgColor;
+    color: $primary_color;
+    background-color: $bg_projects;
     padding: 13px 30px;
     border-radius: 30px;
-    border: 1px solid $lightBlue;
+    border: 1px solid $primary_color;
     text-decoration: none;
     transition: background-color 0.3s;
 
@@ -263,11 +263,11 @@ nav {
     }
 
     &:nth-child(1) {
-      background-color: $lightBlue;
-      color: $mainBgColor;
+      background-color: $primary_color;
+      color: $bg_projects;
 
       &:hover {
-        background-color: $fontLightPurple;
+        background-color: $secondary_color;
       }
     }
   }
@@ -275,7 +275,7 @@ nav {
 
 .active {
   background-color: $projectBg !important;
-  color: $fontLightPurple !important;
+  color: $secondary_color !important;
 }
 
 @media (min-width: 1024px) {
@@ -377,7 +377,7 @@ nav {
 
   .task .task-header .task-title h3 {
     font-size: 18px;
-    color: $lightBlue;
+    color: $primary_color;
   }
 
   .left-section .task .task-header .task-title span {
@@ -424,7 +424,7 @@ nav {
 
   .task .task-header .task-title h3 {
     font-size: 18px;
-    color: $lightBlue;
+    color: $primary_color;
   }
 
   .tools img {

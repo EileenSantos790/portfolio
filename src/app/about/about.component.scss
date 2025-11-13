@@ -1,9 +1,17 @@
+@import '../../styles.scss';
+
+@mixin flex-center($direction: row, $gap: null) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+  @if $gap != null {
+    gap: $gap;
+  }
+}
+
 .aboutContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
+    @include flex-center(column, 80px);
     margin-top: 104px;
     margin-inline: 23px;
 }
@@ -49,13 +57,13 @@
     display: inline-flex;
     align-items: center;
     white-space: nowrap;
-    color: #F8F5EC;
+    color: $secondary_color;
     user-select: none;
     caret-color: transparent;
 }
 
 .highlight {
-    color: #89BCD9;
+    color: $primary_color;
 }
 
 .fade-in {
@@ -79,18 +87,18 @@
 }
 
 :host ::ng-deep .typed-cursor {
-    color: #89BCD9;
+    color: $primary_color;
     margin-left: 0;
     font-size: 30px;
 }
 
 
 .buttonFirst {
-    background-color: #262E34;
+    background-color: $bg_projects;
     height: 48px;
     width: 134px;
-    border: solid 1px #89BCD9;
-    color: #89BCD9;
+    border: solid 1px $primary_color;
+    color: $primary_color;
     font-size: 18px;
     border-radius: 30px;
     margin-top: 24px;
@@ -98,7 +106,7 @@
 
     >a {
         text-decoration: none;
-        color: #89BCD9;
+        color: $primary_color;
     }
 }
 

@@ -1,8 +1,17 @@
+@import '../../../styles.scss';
+
+@mixin flex-center($direction: row, $gap: null) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+  @if $gap != null {
+    gap: $gap;
+  }
+}
+
 .heroHeadline {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex-center(column);
     padding-top: 36px;
     text-align: center;
 }
@@ -14,7 +23,7 @@
 }
 
 .navLine {
-    background-color: #89BCD9;
+    background-color: $primary_color;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -31,13 +40,13 @@
 }
 
 .nameLogoSmall {
-    color: #F8F5EC;
+    color: $secondary_color;
     font-family: 'Anta', sans-serif;
     font-size: 16px;
 }
 
 .specificationLogoSmall {
-    color: #262E34;
+    color: $bg_projects;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 16px;
     font-weight: 300;
@@ -52,7 +61,7 @@
 }
 
 .navLinks a {
-    color: #262E34;
+    color: $bg_projects;
     text-decoration: none;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 26px;
@@ -67,11 +76,11 @@
 .navLinks a:hover {
     cursor: pointer;
     text-decoration: none;
-    color: #F1F0EA;
+    color: $secondary_color;
 }
 
 .navLinks a.active {
-    color: #F1F0EA;
+    color: $secondary_color;
 }
 
 .link-text {
@@ -99,24 +108,22 @@
 }
 
 .languageSwitch a {
-    color: #262E34;
+    color: $bg_projects;
     text-decoration: none;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 18px;
     font-weight: 400;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center(row);
 }
 
 .languageSwitch a:hover {
     cursor: pointer;
-    color: #F1F0EA;
+    color: $secondary_color;
 }
 
 .languageSwitch a.active {
-    color: #F1F0EA;
+    color: $secondary_color;
 }
 
 .language-indicator {
@@ -133,14 +140,11 @@
 .languageSwitch a:hover {
     cursor: pointer;
     text-decoration: none;
-    color: #F1F0EA;
+    color: $secondary_color;
 }
 
 .logoHero {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    @include flex-center(column);
     width: 56px;
 }
 

@@ -1,11 +1,19 @@
-$mainBgColor: #262E34;
-$fontLightPurple: #F8F5EC;
-$lightBlue: #89BCD9;
-$BtnHoverBg: #F8F5EC1F;
+@import '../../styles.scss';
+
+@mixin flex-center($direction: row, $gap: null) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+  @if $gap != null {
+    gap: $gap;
+  }
+}
+
 $projectBg: #89BCD912;
 
 h3 {
-  color: $lightBlue;
+  color: $primary_color;
   font-family: "Josefin Sans", sans-serif;
 }
 
@@ -23,12 +31,12 @@ h2 {
   text-align: left;
   margin-bottom: 8px;
   font-family: 'Anta', sans-serif;
-  color: $lightBlue;
+  color: $primary_color;
 }
 
 .subtitle {
   font-size: 18px;
-  color: $fontLightPurple;
+  color: $secondary_color;
   text-align: left;
   margin-bottom: 56px;
   font-family: "Josefin Sans", sans-serif;
@@ -57,7 +65,7 @@ h2 {
   .title-line .subtitle {
     margin: 0;
     font-size: 32px;
-    color: $lightBlue;
+    color: $primary_color;
     font-family: "Josefin Sans", sans-serif;
   }
 }
@@ -83,14 +91,14 @@ h2 {
   }
 
   &::-webkit-scrollbar-thumb {
-    background: $lightBlue;
+    background: $primary_color;
     border-radius: 8px;
     border: 2px solid #1a1f23;
     transition: background-color 0.3s;
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: darken($lightBlue, 10%);
+    background: darken($primary_color, 10%);
   }
 
   &::-webkit-scrollbar-track {
@@ -98,7 +106,7 @@ h2 {
     border-radius: 8px;
   }
 
-  scrollbar-color: $lightBlue $projectBg;
+  scrollbar-color: $primary_color $projectBg;
   scrollbar-width: thin;
 }
 
@@ -116,9 +124,7 @@ h2 {
   width: 400px;
   height: 400px;
   padding: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center(row);
   flex-shrink: 0;
   scroll-snap-align: center;
   background-image: url("/assets/references-section/eclipse_reference.svg");
@@ -145,7 +151,7 @@ h2 {
       font-size: 26px;
       font-weight: 500;
       margin: 0;
-      color: $fontLightPurple;
+      color: $secondary_color;
 
       @media (max-width: 1024px) {
         font-size: 24px;
@@ -167,21 +173,21 @@ h2 {
     }
 
     .reference_project {
-      color: $fontLightPurple;
+      color: $secondary_color;
     }
 
     .reference_project>span {
-      color: $lightBlue;
+      color: $primary_color;
     }
 
     span {
-      color: $lightBlue;
+      color: $primary_color;
     }
 
     .text {
       font-family: "Josefin Sans", sans-serif;
       font-size: 16px;
-      color: $fontLightPurple;
+      color: $secondary_color;
       text-align: center;
       line-height: 1.6;
       margin: 8px 0;
@@ -195,7 +201,7 @@ h2 {
         }
 
         &::-webkit-scrollbar-thumb {
-          background: $lightBlue;
+          background: $primary_color;
           border-radius: 4px;
         }
       }
@@ -204,13 +210,13 @@ h2 {
     a {
       font-family: "Josefin Sans", sans-serif;
       font-size: 16px;
-      color: $lightBlue;
+      color: $primary_color;
       margin-top: 8px;
       transition: color 0.2s ease-in-out;
       text-decoration: underline;
 
       &:hover {
-        color: $fontLightPurple;
+        color: $secondary_color;
       }
     }
 

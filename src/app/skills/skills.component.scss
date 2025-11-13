@@ -1,17 +1,25 @@
+@import '../../styles.scss';
+
+@mixin flex-center($direction: row, $gap: null) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+  @if $gap != null {
+    gap: $gap;
+  }
+}
+
 .skillsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include flex-center(column, 80px);
     padding-inline: 23px;
-    gap: 80px;
     margin-top: 104px;
     margin-bottom: 104px;
 
     h2 {
         font-size: 60px;
         font-weight: 400;
-        color: #89BCD9;
+        color: $primary_color;
         margin: 0;
     }
 }
@@ -33,10 +41,7 @@
 }
 
 .skillItem {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    @include flex-center(column, 10px);
 
     img {
         width: 54px;
@@ -45,7 +50,7 @@
 
     span {
         font-size: 18px;
-        color: #89BCD9;
+        color: $primary_color;
         font-weight: 400;
         text-align: center;
     }
@@ -56,11 +61,7 @@
     height: 391px;
     flex-shrink: 0;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 19px;
+    @include flex-center(column, 19px);
     background-image: url('/assets/skills-section/eclipse_reference.svg');
     background-size: contain;
     background-position: center;
@@ -72,7 +73,7 @@
 
     >p {
         font-size: 18px;
-        color: #F8F5EC;
+        color: $secondary_color;
         margin: 0;
     }
 
@@ -85,10 +86,7 @@
     }
 
     .learningIcon {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
+        @include flex-center(column, 5px);
 
         img {
             width: 32px;
@@ -97,14 +95,14 @@
 
         span {
             font-size: 16px;
-            color: #F8F5EC;
+            color: $secondary_color;
             font-weight: 400;
         }
     }
 
     .motivationalText {
         font-size: 18px;
-        color: #F8F5EC;
+        color: $secondary_color;
         font-weight: 400;
         text-align: center;
         margin: 0;
@@ -210,7 +208,7 @@
 
     .responsiveLearningSectionHeadline {
         font-size: 16px;
-        color: #89BCD9;
+        color: $primary_color;
         margin: 0;
         display: flex;
         justify-content: center;
@@ -238,10 +236,7 @@
     }
 
     .responsiveLearningIcon {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
+        @include flex-center(column, 5px);
 
         img {
             width: 32px;
@@ -250,7 +245,7 @@
 
         span {
             font-size: 16px;
-            color: #F8F5EC;
+            color: $secondary_color;
             font-weight: 400;
         }
     }
@@ -258,12 +253,12 @@
     .responsiveMotivationalText {
         font-size: 16px;
         line-height: 1.5;
-        color: #F8F5EC;
+        color: $secondary_color;
         margin: 0;
     }
 
     .buttonSecondary {
-        background-color: #89BCD9;
+        background-color: $primary_color;
         border: none;
         border-radius: 30px;
         padding-inline: 30px;
@@ -271,9 +266,14 @@
         margin-top: 40px;
         justify-content: center;
         align-items: center;
-        color: #262E34;
+        color: $bg_projects;
         font-size: 16px;
         font-weight: 400px;
         cursor: pointer;
+        
+        >a {
+            text-decoration: none;
+            color: #262E34;
+        }
     }
 }
