@@ -38,7 +38,7 @@ section {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 60%;
+  width: 70%;
   max-width: 1440px;
 }
 
@@ -96,32 +96,26 @@ span {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
+  span {
+    font-family: 'Josefin Sans';
+    font-size: 20px;
     color: $fontLightPurple;
+  }
+
+  img {
+    margin-right: 24px;
+  }
+
+  &:hover {
+    color: $lightBlue;
 
     span {
-      font-family: 'Josefin Sans';
-      font-size: 20px;
-      color: $fontLightPurple;
-    }
-
-    img {
-      margin-right: 24px;
-    }
-
-    &:hover {
       color: $lightBlue;
-
-      span {
-        color: $lightBlue;
-      }
     }
   }
+
 }
 
 .phone {
@@ -461,7 +455,7 @@ button {
     margin-bottom: 32px;
   }
 
-  .form-field{
+  .form-field {
     margin-bottom: 32px;
   }
 

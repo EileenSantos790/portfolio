@@ -62,7 +62,6 @@ footer {
   align-items: center;
   width: 100%;
   max-width: 1440px;
-  padding: 0 22px;
 }
 
 .link-wrapper {
@@ -115,14 +114,18 @@ footer {
 @media (max-width: 740px) {
   .footer-section {
     width: 100%;
+    height: 243px;
+  }
+
+  .logoHero{
+    padding-top: 30px;
   }
 
   .legal-notice-mobile {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; // show items side-by-side under 740px
     align-items: center;
     justify-content: center;
-    gap: 16px;
   }
 
   .footer-content {
@@ -141,7 +144,14 @@ footer {
     display: flex;
 
     img {
-      margin: 0 24px;
+      margin: 0 12px;
+    }
+
+    a {
+      cursor: pointer; // hover effect: only show pointer
+      &:hover {
+        color: inherit; // prevent color change, keep icons unchanged
+      }
     }
   }
 
@@ -150,7 +160,8 @@ footer {
     a,
     p {
       font-size: 14px;
-      padding: 32px 0; // keep vertical padding, remove horizontal to avoid doubling with gap
+      // reduce vertical padding for horizontal alignment
+      padding: 16px 0;
     }
   }
 }
