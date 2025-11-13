@@ -1,9 +1,11 @@
 <nav class="navLine">
-  <div class="logoHero">
-    <img src="../../assets/hero-section/icons/Logo_black.svg" />
+
+  <a href="#" class="logoHero" aria-label="E.Santos Developer">
+    <img class="logoHeroImg" src="/assets/hero-section/icons/Logo_black.svg" alt="Logo">
     <span class="nameLogoSmall">E.Santos</span>
-    <span class="specificationLogoSmall">developer</span>
-  </div>
+    <span class="specificationLogoSmall">{{ translations.footer.developer }}</span>
+  </a>
+
   <div class="navLinks">
     <a href="#about" (click)="setActiveSection('about', $event)" [class.active]="activeSection === 'about'">
       <span class="link-text">{{ translations.navbar.whyMe }}</span>

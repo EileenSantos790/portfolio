@@ -200,6 +200,9 @@
         width: 100%;
         padding: 30px 36px;
         box-sizing: border-box;
+        >a {
+            text-decoration: none;
+        }
     }
 
     .backArrow {

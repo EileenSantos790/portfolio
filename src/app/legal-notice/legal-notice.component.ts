@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { NavbarComponent } from '../shared/navbar/navbar.component';
@@ -11,7 +11,7 @@ import { TranslationService, Language, Translations } from '../services/translat
   templateUrl: './legal-notice.component.html',
   styleUrl: './legal-notice.component.scss'
 })
-export class LegalNoticeComponent {
+export class LegalNoticeComponent implements OnInit {
   isMenuOpen = false;
   translations: Translations;
   activeLanguage: Language = 'EN';
@@ -24,6 +24,10 @@ export class LegalNoticeComponent {
       this.activeLanguage = lang;
       this.translations = this.translationService.getTranslations();
     });
+  }
+
+  ngOnInit(): void {
+    window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
   toggleMenu(): void {

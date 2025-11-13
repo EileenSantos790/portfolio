@@ -1,12 +1,10 @@
 <app-navbar></app-navbar>
 <div class="responsiveHeader">
-  <div>
-    <div class="logoHero">
-      <div class="logoHeroImg"></div>
-      <span class="nameLogo">E.Santos</span>
-      <span class="specificationLogo">{{ translations.hero.developer }}</span>
-    </div>
-  </div>
+      <a class="logoHero" href="#" aria-label="E.Santos Developer">
+       <div class="logoHeroImg"></div>
+        <span class="nameLogo">E.Santos</span>
+        <span class="specificationLogo">{{ translations.hero.developer }}</span>
+    </a>
   <div class="menuTrigger">
     <img class="menuIcon" src="../../assets/hero-section/icons/symple_menu.svg" alt="Menu Icon" (click)="toggleMenu()" aria-haspopup="true" [attr.aria-expanded]="isMenuOpen">
   </div>
