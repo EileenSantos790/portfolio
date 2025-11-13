@@ -333,6 +333,12 @@ $secondary_color: #F8F5EC;
   }
 }
 
+.linkedInHover:hover svg {
+  path {
+    fill: #89BCD9;
+  }
+}
+
 @media (max-width: 1180px) {
   .heroSectionTitle {
     font-size: 48px;
