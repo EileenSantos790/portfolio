@@ -109,8 +109,17 @@ $secondary_color: #F8F5EC;
   align-items: center;
   justify-content: center;
   margin-inline: 23px;
-  width: webkit-fill-available;
+  width: 90%;
 }
+
+/* Split container into equal halves */
+.FirstHeroSectionLeft,
+.FirstHeroSectionRight {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+/* keep right side layout unchanged (do not override child alignment) */
 
 /* Hero Image Section */
 .heroSectionImgContainer {
@@ -133,14 +142,9 @@ $secondary_color: #F8F5EC;
   background-size: contain;
   background-position: center;
   transform: rotate(-45deg);
-  // top: 0;
-  // left: 5%;
-  // width: 80%;
-  // height: 110%;
-  top: 200px;
-  right: 100px;
-  width: 100%;
-  height: 80%;
+  top: 110px;
+  width: 80%;
+  height: 100%;
   opacity: 1;
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
@@ -359,7 +363,7 @@ $secondary_color: #F8F5EC;
   }
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 1300px) {
   .heroSectionTitle {
     font-size: 48px;
   }
@@ -377,9 +381,20 @@ $secondary_color: #F8F5EC;
   }
 }
 
+// @media (max-width: 900px) {
+//   .heroSectionImgContainer {
+//     left: 0px;
+//   }
+// }
+
 @media (max-width: 740px) {
   .FirstHeroSectionContainer {
     flex-direction: column;
+  }
+
+  .FirstHeroSectionLeft,
+  .FirstHeroSectionRight {
+    max-width: 100%;
   }
 
   .responsiveHeader {
@@ -410,7 +425,12 @@ $secondary_color: #F8F5EC;
   }
 
   .mainImg {
-    margin-top: 90px;
+    margin-top: 0px;
+  }
+
+  .heroCircleBackground {
+    height: 70%;
+    top: 0px;
   }
 }
 

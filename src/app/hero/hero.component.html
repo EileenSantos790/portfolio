@@ -14,7 +14,7 @@
   <!-- Backdrop to close on outside click -->
   <div class="overlayBackdrop" *ngIf="isMenuOpen" (click)="closeMenu()"></div>
   <div class="FirstHeroSectionContainer">
-    <div class="heroSectionImgContainer">
+    <div class="heroSectionImgContainer FirstHeroSectionLeft">
       <div class="heroCircleBackground"></div>
       <!-- Overlay centered over main image -->
       <nav class="overlayCard" *ngIf="isMenuOpen" (click)="$event.stopPropagation()">
@@ -30,8 +30,8 @@
         </div>
       </nav>
       <img class="mainImg" src="./assets/hero-section/hero_Container_img.png" />
-    </div>
-    <div>
+  </div>
+  <div class="FirstHeroSectionRight">
       <div class="heroSectionTextContainer">
         <div>
           <div class="logoHero">
