@@ -1,5 +1,35 @@
 <app-navbar></app-navbar>
+<div class="responsiveHeader">
+  <div>
+    <div class="logoHero">
+      <div class="logoHeroImg"></div>
+      <span class="nameLogo">E.Santos</span>
+      <span class="specificationLogo">{{ translations.hero.developer }}</span>
+    </div>
+  </div>
+  <div class="menuTrigger">
+    <img class="menuIcon" src="../../assets/hero-section/icons/symple_menu.svg" alt="Menu Icon" (click)="toggleMenu()" aria-haspopup="true" [attr.aria-expanded]="isMenuOpen">
+  </div>
+</div>
+<!-- Backdrop to close on outside click -->
+<div class="overlayBackdrop" *ngIf="isMenuOpen" (click)="closeMenu()"></div>
+<!-- Overlay centered over main image -->
+<nav class="overlayCard" *ngIf="isMenuOpen" (click)="$event.stopPropagation()">
+  <ul class="overlayList">
+    <li><a href="/#about" (click)="closeMenu()">{{ translations.navbar.whyMe }}</a></li>
+    <li><a href="/#skills" (click)="closeMenu()">{{ translations.navbar.skills }}</a></li>
+    <li><a href="/#projects" (click)="closeMenu()">{{ translations.navbar.projects }}</a></li>
+    <li><a href="/#contact" (click)="closeMenu()">{{ translations.navbar.contact }}</a></li>
+  </ul>
+  <div class="overlayLang">
+    <span class="lang" [class.active]="activeLanguage === 'DE'" (click)="setActiveLanguage('DE')">DE</span>
+    <span class="lang" [class.active]="activeLanguage === 'EN'" (click)="setActiveLanguage('EN')">EN</span>
+  </div>
+</nav>
 <section>
+  <a routerLink="/" class="backArrow">
+    <img src="../../assets/icons/ArrowLeftMob.svg" alt="Back to home" />
+  </a>
   <div class="legal-notice">
 
     <h1>Legal Notice</h1>
