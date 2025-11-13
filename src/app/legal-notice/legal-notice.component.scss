@@ -1,6 +1,15 @@
 /* Container optional */
 .legal-notice {
     line-height: 1.6;
+    margin-block: 65px;
+    margin-inline: 100px;
+}
+
+.legal-notice h2{
+    font-size: 24px;
+    color: #89BCD9;
+    font-weight: 700;
+    margin-bottom: 16px;
 }
 
 /* Headline "Legal notice" */
@@ -12,7 +21,7 @@
 }
 
 /* Alle Überschriften */
-.legal-notice h2,
+
 .legal-notice h3,
 .legal-notice h4,
 .legal-notice h5,
@@ -34,4 +43,14 @@
 /* Fettgedruckte Wörter */
 .legal-notice strong {
     color: #89BCD9;
+}
+
+@media (max-width: 900px) {
+    .legal-notice {
+        margin-inline: 23px;
+    }
+
+    .legal-notice h1 {
+        font-size: 32px;
+    }
 }
