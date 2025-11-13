@@ -38,8 +38,8 @@ export class ReferencesComponent {
       nameEN: 'Following the objective',
       nameDE: 'Dem Ziel folgend',
       project: '2024 - Present',
-      referenceEN: 'I have a strong interest in deepening my knowledge in front-end development and am currently completing additional training at the Developer Academy alongside my studies.',
-      referenceDE: 'Ich habe großes Interesse daran, mein Wissen in der Frontend-Entwicklung zu vertiefen und absolviere derzeit zusätzliche Schulungen an der Developer Akademie parallel zu meinem Studium.',
+      referenceEN: 'I have a strong interest in deepening my knowledge in front-end development and am currently completing additional training at the Developer Academy.',
+      referenceDE: 'Ich möchte mein Wissen in der Frontend-Entwicklung vertiefen und absolviere derzeit eine Schulung an der Developer Akademie',
     }
   ];
   currentLang: string = 'EN';
