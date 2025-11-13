@@ -36,4 +36,12 @@ export class HeroComponent {
     this.translationService.setLanguage(language);
     this.closeMenu();
   }
+
+  scrollToSection(sectionId: string, event: Event): void {
+    event.preventDefault();
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }
