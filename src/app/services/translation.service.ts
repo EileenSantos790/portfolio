@@ -92,7 +92,7 @@ export class TranslationService {
       skills: {
         title: 'My skills',
         currentlyLearning: 'I am currently learning',
-        motivationalText: "Didn't find the skill you're looking for? I'm always motivated to learn new areas and expand my expertise. So please don't hesitate to contact me — I'm excited to develop new skills and take on new challenges!",
+        motivationalText: "Didn't find the skill you're looking for? I'm always motivated to learn new areas and expand my expertise.",
         letsTalk: "Let's talk"
       },
       projects: {
