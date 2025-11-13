@@ -20,7 +20,7 @@ footer {
   a {
     text-decoration: none;
     color: $bg_projects;
-    transition: 0.2s all ease-in-out;
+    transition: 0.1s all ease-in-out;
 
     &:hover {
       color: $secondary_color;
@@ -36,7 +36,7 @@ footer {
 
 .left-section-wrapper {
   opacity: 1;
-  transition: opacity 0.1s cubic-bezier(0.0, 0.4, 0.165, 1), transform 0.2s ease;
+  transition: opacity 0.1s cubic-bezier(0.0, 0.4, 0.165, 1), transform 0.1s ease;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -82,7 +82,7 @@ footer {
     width: 56px;
     height: 56px;
     display: block;
-    transition: all 300ms ease-out;
+    transition: all 100ms ease-out;
   }
 
   .nameLogo {

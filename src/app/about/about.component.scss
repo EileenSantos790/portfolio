@@ -35,7 +35,7 @@
         width: 64px;
         height: 64px;
         flex-shrink: 0;
-        transition: opacity 0.3s ease-in-out;
+        transition: opacity 0.1s ease-in-out;
     }
 }
 
@@ -73,7 +73,7 @@
 
 .fade-out {
     opacity: 0;
-    transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
 }
 
 @keyframes fadeIn {

@@ -149,7 +149,7 @@
   width: 80%;
   height: 100%;
   opacity: 1;
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
 }
 
 .heroCircleBackground:hover {
@@ -193,7 +193,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    transition: all 300ms ease-out;
+    transition: all 100ms ease-out;
     display: block;
   }
 
@@ -237,7 +237,7 @@
       animation: bounce 1s infinite alternate;
 
       rect {
-        transition: fill 0.4s ease;
+        transition: fill 0.1s ease;
         fill: transparent;
       }
 

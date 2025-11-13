@@ -94,7 +94,7 @@ h2 {
     background: $primary_color;
     border-radius: 8px;
     border: 2px solid #1a1f23;
-    transition: background-color 0.3s;
+    transition: background-color 0.1s;
   }
 
   &::-webkit-scrollbar-thumb:hover {
@@ -131,7 +131,7 @@ h2 {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  transition: all 500ms ease;
+  transition: all 100ms ease;
 
   &:hover {
     background-image: url("/assets/references-section/eclipse_reference_hover.svg");
@@ -212,7 +212,7 @@ h2 {
       font-size: 16px;
       color: $primary_color;
       margin-top: 8px;
-      transition: color 0.2s ease-in-out;
+      transition: color 0.1s ease-in-out;
       text-decoration: underline;
 
       &:hover {

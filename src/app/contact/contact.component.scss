@@ -21,14 +21,14 @@ section {
   justify-content: center;
   line-height: 120%;
   opacity: 1;
-  transition: opacity 0.1s cubic-bezier(0.0, 0.4, 0.165, 1), transform 0.2s ease;
+  transition: opacity 0.1s cubic-bezier(0.0, 0.4, 0.165, 1), transform 0.1s ease;
   padding-top: 80px;
   margin-inline: 23px;
 }
 
 .arrow-up {
   position: absolute;
-  transition: 0.2s all ease-in-out;
+  transition: 0.1s all ease-in-out;
   right: 0;
   padding-top: 70px;
   cursor: pointer;
@@ -84,7 +84,7 @@ span {
 :host ::ng-deep .custom-checkbox p a {
   color: $primary_color !important;
   text-decoration: none;
-  transition: 0.2s color ease-in-out;
+  transition: 0.1s color ease-in-out;
 
   &:visited {
     color: $primary_color !important;
@@ -270,7 +270,7 @@ button {
   background-color: $bg_projects;
   border: 1px solid $primary_color;
   padding: 13px 30px;
-  transition: 0.2s all ease-in-out;
+  transition: 0.1s all ease-in-out;
 
   &:hover {
     background-color: #89BCD912;
@@ -289,14 +289,14 @@ button {
     height: 28px;
     margin-right: 12px;
     object-fit: contain;
-    transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
   }
 
   p {
     a {
       color: $primary_color !important;
       text-decoration: none;
-      transition: 0.2s color ease-in-out;
+      transition: 0.1s color ease-in-out;
 
       &:visited {
         color: $primary_color !important;
@@ -322,7 +322,7 @@ button {
 
 .arrow-up-mobile {
   display: none;
-  transition: 0.2s all ease-in-out;
+  transition: 0.1s all ease-in-out;
   cursor: pointer;
   margin-top: 80px;
   margin-bottom: 104px;
