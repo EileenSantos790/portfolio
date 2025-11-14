@@ -12,6 +12,16 @@ import { HttpClient } from '@angular/common/http';
 import { TranslationService, Translations } from '../services/translation.service';
 
 /**
+ * Validator that fails when the value is only whitespace.
+ * Returns a required error to integrate with current UI checks.
+ */
+export function notBlankValidator(control: AbstractControl): ValidationErrors | null {
+  const value = control.value;
+  if (value === null || value === undefined) return null;
+  return String(value).trim().length > 0 ? null : { required: true };
+}
+
+/**
  * Custom email validator to ensure TLD is present.
  * @param control The form control to validate.
  * @returns Validation error object or null if valid.
@@ -72,9 +82,9 @@ export class ContactComponent {
       this.translations = this.translationService.getTranslations();
     });
     this.contactForm = this.fb.group({
-      name: ['', [Validators.required, nameWithoutNumbersValidator]],
-      email: ['', [Validators.required, emailWithTLDValidator]],
-      message: ['', Validators.required],
+      name: ['', [Validators.required, notBlankValidator, nameWithoutNumbersValidator]],
+      email: ['', [Validators.required, notBlankValidator, emailWithTLDValidator]],
+      message: ['', [Validators.required, notBlankValidator]],
       privacyPolicy: [false, Validators.requiredTrue]
     });
   }
