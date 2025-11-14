@@ -5,10 +5,12 @@
   align-items: center;
   justify-content: center;
   flex-direction: $direction;
-  @if $gap != null {
+
+  @if $gap !=null {
     gap: $gap;
   }
 }
+
 .sectionContainer {
   height: calc(100vh - 104px);
   @include flex-center(column);
@@ -379,6 +381,7 @@
     display: none;
   }
 }
+
 @media (max-width: 739px) {
   .FirstHeroSectionContainer {
     flex-direction: column;
@@ -436,5 +439,31 @@
   .overlayCard {
     width: 253px;
     height: 270px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .sectionContainer {
+    position: relative;
+  }
+
+  .mainImg {
+    width: unset;
+    height: 1350px;
+    margin-top: 400px;
+    margin-left: 500px;
+  }
+
+  .heroCircleBackground {
+    width: 1000px;
+    top: 200px;
+    left: 100px;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .heroHeadline {
+    position: relative;
+    z-index: 1;
   }
 }
