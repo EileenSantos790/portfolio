@@ -1,6 +1,5 @@
 @import '../../styles.scss';
 
-/* Container optional */
 .legal-notice {
     line-height: 1.6;
     margin-bottom: 32px;
@@ -15,15 +14,12 @@
     margin-bottom: 16px;
 }
 
-/* Headline "Legal notice" */
 .legal-notice h1 {
     font-size: 54px;
     color: $primary_color;
     font-weight: 700;
     margin-bottom: 20px;
 }
-
-/* Alle Überschriften */
 
 .legal-notice h3,
 .legal-notice h4,
@@ -35,7 +31,6 @@
     margin-top: 25px;
 }
 
-/* Normaler Text */
 .legal-notice p,
 .legal-notice li {
     font-size: 16px;
@@ -43,12 +38,10 @@
     color: $secondary_color;
 }
 
-/* Fettgedruckte Wörter */
 .legal-notice strong {
     color: $primary_color;
 }
 
-/* Mobile menu styles */
 .responsiveHeader {
     display: none;
 }

@@ -42,14 +42,12 @@ h2 {
   font-family: "Josefin Sans", sans-serif;
 }
 
-/* Title line container keeps mobile stack by default */
 .title-line {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-/* Wide screens: place headline and subtitle on one centered line with unified style */
 @media screen and (min-width: 1024px) {
   .title-line {
     flex-direction: row;
@@ -110,7 +108,6 @@ h2 {
   scrollbar-width: thin;
 }
 
-/* Center the references container on wide screens */
 @media screen and (min-width: 1024px) {
   .references {
     margin-left: auto;
@@ -224,7 +221,6 @@ h2 {
       gap: 8px;
       align-items: flex-start;
 
-      /* ensure text is left-aligned on small screens */
       .reference_project,
       .text,
       a,

@@ -117,16 +117,12 @@
   width: 90%;
 }
 
-/* Split container into equal halves */
 .FirstHeroSectionLeft,
 .FirstHeroSectionRight {
   flex: 0 0 50%;
   max-width: 50%;
 }
 
-/* keep right side layout unchanged (do not override child alignment) */
-
-/* Hero Image Section */
 .heroSectionImgContainer {
   position: relative;
   display: flex;
@@ -166,7 +162,6 @@
   margin-top: 120px;
 }
 
-/* Hero Text Section */
 .heroSectionTextContainer {
   display: flex;
   flex-direction: row;
@@ -175,7 +170,6 @@
   gap: 40%;
 }
 
-/* Hero Logo */
 .socialMediaIconsHero {
   display: flex;
   flex-direction: column;
@@ -210,7 +204,6 @@
   }
 }
 
-/* Hero HEADLINE */
 .heroHeadline {
   display: flex;
   flex-direction: column;
@@ -258,9 +251,6 @@
   }
 
 }
-
-
-
 
 .navLine {
   background-color: $primary_color;
