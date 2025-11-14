@@ -6,11 +6,21 @@
     Header set Access-Control-Max-Age "86400"
 </IfModule>
 
-# Handle OPTIONS requests
+# Enable Rewrite Engine
 RewriteEngine On
+
+# Handle OPTIONS requests
 RewriteCond %{REQUEST_METHOD} OPTIONS
 RewriteRule ^(.*)$ $1 [R=200,L]
 
 # Redirect to HTTPS (if needed)
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Angular routing - redirect all requests to index.html
+# Don't rewrite files or directories that exist
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite everything else to index.html to allow Angular to handle routing
+RewriteRule ^ index.html [L]
