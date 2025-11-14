@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './shared/footer/footer.component';
 
+declare const AOS: any;
+
 /**
  * Root application component that sets up global behaviors and layout.
  */
@@ -24,6 +26,20 @@ export class AppComponent implements OnInit {
     this.clearHashAndGoTop();
     this.setupPageShowListener();
     this.setupBeforeUnloadListener();
+    this.initAOS();
+  }
+
+  /**
+   * Initializes AOS (Animate On Scroll) library.
+   */
+  private initAOS() {
+    if (typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100
+      });
+    }
   }
 
   /**

@@ -1,7 +1,7 @@
 <section id="contact">
   <div class="contact-main">
     <div class="headline">
-      <h2>{{ translations.contact.title }}</h2>
+      <h2 data-aos="fade-down">{{ translations.contact.title }}</h2>
       <a class="arrow-up" (mouseover)="arrowIsHovered = true" (mouseout)="arrowIsHovered = false" href="#">
         <img 
           [src]="arrowIsHovered ? '/assets/Why_me_Section/Arrow_up_hover.svg' : '/assets/Why_me_Section/Arrow_up.svg'" 
@@ -10,10 +10,10 @@
     </div>
 
     <div class="description">
-      <div class="contact-me-text">
+      <div class="contact-me-text" data-aos="fade-right">
         <p>{{ translations.contact.description }}</p>
       </div>
-      <div class="contact-data">
+      <div class="contact-data" data-aos="fade-left">
         <div class="email" (mouseover)="mailIsHovered = true" (mouseout)="mailIsHovered = false" (click)="onEmailClick($event)" style="cursor: pointer;">
           <img 
             [src]="mailIsHovered ? '/assets/contact-section/Mail_hover.svg' : '/assets/contact-section/Mail.svg'" 
@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" data-aos="fade-up" data-aos-delay="200">
       <div class="input-data">
         <div class="form-field">
           <label for="name">

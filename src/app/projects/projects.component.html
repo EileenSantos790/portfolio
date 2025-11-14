@@ -1,6 +1,6 @@
 <section id="projects">
-  <h2>{{ translations.projects.title }}</h2>
-  <div class="project-main-card">
+  <h2 data-aos="fade-down">{{ translations.projects.title }}</h2>
+  <div class="project-main-card" data-aos="fade-up" data-aos-delay="200">
     <nav>
       @for (project of projects; track $index) {
       <button [class.active]="activeIndex === $index" (click)="setActive($index)" class="button">

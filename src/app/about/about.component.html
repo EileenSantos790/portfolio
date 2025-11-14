@@ -1,13 +1,13 @@
 <section id="about" class="aboutContainer">
-    <h2>{{ translations.about.title }}</h2>
+    <h2 data-aos="fade-down">{{ translations.about.title }}</h2>
     <div class="aboutTextContent">
-        <div class="textAnimationContainer">
+        <div class="textAnimationContainer" data-aos="fade-right" data-aos-delay="200">
             <img [src]="currentIcon" [class]="fadeClass" alt="About Me" />
             <span class="spaceAnimation">
                 <span class="highlight">{{ translations.about.iAm }}&nbsp;</span><span #typedElement></span>
             </span>
         </div>
-        <div class="textArea">
+        <div class="textArea" data-aos="fade-left" data-aos-delay="400">
             <span>{{ translations.about.description }}</span>
             <a href='#contact'><button class="buttonFirst">{{ translations.about.letsTalk }}</button></a>
         </div>

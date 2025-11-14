@@ -1,18 +1,22 @@
 <section id="skills" class="skillsContainer">
-  <h2>{{ translations.skills.title }}</h2>
+  <h2 data-aos="fade-down">{{ translations.skills.title }}</h2>
 
   <div class="skillsContent">
     <div class="skillsGrid">
-      <div class="skillItem" *ngFor="let skill of skills">
+      <div class="skillItem" *ngFor="let skill of skills; let i = index" 
+           data-aos="zoom-in" 
+           [attr.data-aos-delay]="i * 50">
         <img [src]="skill.icon" [alt]="skill.name" />
         <span>{{ skill.name }}</span>
       </div>
     </div>
 
-    <div class="learningSection">
+    <div class="learningSection" data-aos="fade-up" data-aos-delay="300">
       <p>{{ translations.skills.currentlyLearning }}</p>
       <div class="learningIcons">
-        <div class="learningIcon" *ngFor="let skill of learningSkills">
+        <div class="learningIcon" *ngFor="let skill of learningSkills; let i = index"
+             data-aos="flip-left"
+             [attr.data-aos-delay]="400 + (i * 100)">
           <img [src]="skill.icon" [alt]="skill.name" />
           <span>{{ skill.name }}</span>
         </div>
