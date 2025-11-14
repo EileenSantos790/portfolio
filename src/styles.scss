@@ -15,10 +15,13 @@ $done_color: #97E163;
 
 html {
   scroll-padding-top: 120px;
+  overflow-x: hidden;
 }
 
 body {
     background-color: $bg_projects;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 app-root {
@@ -26,6 +29,7 @@ app-root {
   max-width: 1920px;
   margin: 0 auto;
   position: relative;
+  overflow-x: hidden;
 }
 
 h1 {
