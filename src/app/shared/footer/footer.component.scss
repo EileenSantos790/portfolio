@@ -143,9 +143,9 @@ footer {
     }
 
     a {
-      cursor: pointer; // hover effect: only show pointer
+      cursor: pointer;
       &:hover {
-        color: inherit; // prevent color change, keep icons unchanged
+        color: inherit;
       }
     }
   }
@@ -154,8 +154,7 @@ footer {
 
     a,
     p {
-      font-size: 14px;
-      // reduce vertical padding for horizontal alignment
+      font-size: 16px;
       padding: 16px 0;
     }
   }
