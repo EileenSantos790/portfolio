@@ -1,13 +1,14 @@
 @import '../../styles.scss';
 
 @mixin flex-center($direction: row, $gap: null) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: $direction;
-  @if $gap != null {
-    gap: $gap;
-  }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: $direction;
+
+    @if $gap !=null {
+        gap: $gap;
+    }
 }
 
 .aboutContainer {
@@ -153,7 +154,8 @@
         gap: 5px;
 
         img {
-            height: 32px;
+            height: 23px;
+            width: 23px;
             display: flex;
             justify-content: center;
             align-items: center;
