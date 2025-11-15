@@ -10,10 +10,10 @@
     </div>
 
     <div class="description">
-      <div class="contact-me-text" data-aos="fade-right">
+      <div class="contact-me-text" data-aos="fade-down">
         <p>{{ translations.contact.description }}</p>
       </div>
-      <div class="contact-data" data-aos="fade-left">
+      <div class="contact-data" data-aos="fade-up">
         <div class="email" (mouseover)="mailIsHovered = true" (mouseout)="mailIsHovered = false" (click)="onEmailClick($event)" style="cursor: pointer;">
           <img 
             [src]="mailIsHovered ? '/assets/contact-section/Mail_hover.svg' : '/assets/contact-section/Mail.svg'" 
