@@ -439,15 +439,15 @@
 
   .mainImg {
     width: unset;
-    height: 1350px;
+    height: 1000px;
     margin-top: 400px;
-    margin-left: 500px;
+    margin-left: 200px;
   }
 
   .heroCircleBackground {
-    width: 1000px;
+    width: 750px;
     top: 200px;
-    left: 100px;
+    left: 200px;
     z-index: -1;
     pointer-events: none;
   }
@@ -455,5 +455,13 @@
   .heroHeadline {
     position: relative;
     z-index: 1;
+  }
+
+  .FirstHeroSectionRight{
+    max-width: 60%;
+  }
+
+  .heroSectionTextContainer{
+    padding-top: 150px;
   }
 }
