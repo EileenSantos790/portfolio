@@ -41,7 +41,7 @@ export class ProjectsComponent {
       experienceDE: 'Wir haben unser Projekt mit einem Trello-Kanban-Board organisiert, Aufgaben aufgeteilt und To-Dos als Team verfolgt. Um den Code sauber und wartbar zu halten, haben wir wiederverwendbare Komponenten gebaut, überall klare Bezeichnungen verwendet und alles gut dokumentiert.',
       image: '/assets/projects-section/join.png',
       technologies: ['JavaScript', 'HTML', 'CSS', 'Firebase'],
-      live: 'https://eileen-vieira-dos-santos.developerakademie.net/Join',
+      live: 'https://join.eileen-santos.com/',
       github: 'https://github.com/EileenSantos790/join.1326'
     },
     {
@@ -55,7 +55,7 @@ export class ProjectsComponent {
       experienceDE: 'Ein Einzelprojekt, bei dem ich alles von der Spiellogik bis zur Benutzeroberfläche übernommen habe. Komplett mit JavaScript, HTML5 Canvas und CSS umgesetzt.',
       image: '/assets/projects-section/Pollo_Loco.png',
       technologies: ['JavaScript', 'HTML', 'CSS'],
-      live: 'https://eileen-vieira-dos-santos.developerakademie.net/Pollo_Loco',
+      live: 'https://el-pollo-loco.eileen-santos.com/',
       github: 'https://github.com/EileenSantos790/Pollo-Loco'
     }
   ];
