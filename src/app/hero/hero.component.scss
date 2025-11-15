@@ -156,10 +156,11 @@
 }
 
 .mainImg {
-  width: 80%;
+  width: 120%;
   position: relative;
   z-index: 2;
-  margin-top: 120px;
+  margin-top: 180px;
+  left: 30px;
 }
 
 .heroSectionTextContainer {
@@ -167,12 +168,36 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: flex-end;
-  gap: 40%;
+}
+
+.flexContainerHeroSection {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  justify-content: stretch;
+  width: 100%;
+  column-gap: 24px;
+  position: relative;
+}
+
+.flexContainerHeroSection>.heroSectionTextContainer:first-child {
+  grid-column: 2;
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.flexContainerHeroSection>.heroSectionTextContainer:last-child {
+  grid-column: 3;
+  justify-self: end;
 }
 
 .socialMediaIconsHero {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  /* align icons to the right edge */
   gap: 16px;
 }
 
@@ -354,7 +379,21 @@
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1200px) {
+  .heroSectionTitle {
+    font-size: 64px;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+
+  .heroCircleBackground {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
   .heroSectionTitle {
     font-size: 48px;
   }
@@ -366,13 +405,14 @@
   .languageSwitch a {
     font-size: 20px;
   }
-
-  .heroSectionTextContainer {
-    display: none;
-  }
 }
 
 @media (max-width: 739px) {
+
+  .flexContainerHeroSection {
+    display: none;
+  }
+
   .FirstHeroSectionContainer {
     flex-direction: column;
   }
@@ -411,17 +451,23 @@
 
   .mainImg {
     margin-top: 0px;
+    width: 90%;
   }
 
   .heroCircleBackground {
-    height: 70%;
-    top: 0px;
+    height: 100%;
+    width: 80%;
+    top: -10px;
   }
 }
 
 @media (min-width: 740px) {
   .responsiveHeader {
     display: none;
+  }
+
+  .goDownHero {
+    margin-bottom: 60px;
   }
 }
 
@@ -442,6 +488,7 @@
     height: 1000px;
     margin-top: 400px;
     margin-left: 200px;
+    left: unset;
   }
 
   .heroCircleBackground {
@@ -457,11 +504,15 @@
     z-index: 1;
   }
 
-  .FirstHeroSectionRight{
+  .FirstHeroSectionRight {
     max-width: 60%;
   }
 
-  .heroSectionTextContainer{
+  .heroSectionTextContainer {
     padding-top: 150px;
+  }
+
+  .goDownHero {
+    margin-top: 140px;
   }
 }
