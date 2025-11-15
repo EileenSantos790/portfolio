@@ -7,7 +7,7 @@
     margin-inline: 100px;
 }
 
-.legal-notice h2{
+.legal-notice h2 {
     font-size: 24px;
     color: $primary_color;
     font-weight: 700;
@@ -193,6 +193,7 @@
         width: 100%;
         padding: 30px 36px;
         box-sizing: border-box;
+
         >a {
             text-decoration: none;
         }
@@ -202,4 +203,12 @@
         display: flex;
         margin-left: 23px;
     }
+}
+
+@media (min-height: 1536px) {
+
+    .legal-notice {
+        height: calc(100vh - 366px);
+    }
+
 }
